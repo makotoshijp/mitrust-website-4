@@ -1274,30 +1274,32 @@
     <div class="section-tag">お問い合わせ</div>
     <h2 class="section-heading">企業変革に関するご相談は、<br>お気軽にどうぞ。</h2>
     <p class="section-lead">秘密厳守。まずは30分の無料オンライン相談から始められます。</p>
-    <div class="contact-form">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value="45077c23-da0a-4a59-842d-196f0081220b">
+      <input type="hidden" name="subject" value="【MIトラスト】お問い合わせが届きました">
       <div class="form-grid">
         <div class="form-row">
           <label>会社名<span>*</span></label>
-          <input type="text" placeholder="株式会社〇〇">
+          <input type="text" name="company" placeholder="株式会社〇〇">
         </div>
         <div class="form-row">
           <label>お名前<span>*</span></label>
-          <input type="text" placeholder="石川 太郎">
+          <input type="text" name="name" placeholder="石川 太郎">
         </div>
       </div>
       <div class="form-grid">
         <div class="form-row">
           <label>メールアドレス<span>*</span></label>
-          <input type="email" placeholder="example@company.com">
+          <input type="email" name="email" placeholder="example@company.com">
         </div>
         <div class="form-row">
           <label>電話番号</label>
-          <input type="tel" placeholder="03-0000-0000">
+          <input type="tel" name="phone" placeholder="03-0000-0000">
         </div>
       </div>
       <div class="form-row">
         <label>ご興味のあるサービス</label>
-        <select>
+        <select name="service">
           <option value="">選択してください</option>
           <option>STEP1: 経営アジェンダの言語化</option>
           <option>STEP3: 売り物の変革</option>
@@ -1309,10 +1311,10 @@
       </div>
       <div class="form-row">
         <label>お問い合わせ内容<span>*</span></label>
-        <textarea placeholder="現在お抱えの経営課題やご相談内容をご記入ください。"></textarea>
+        <textarea name="message" placeholder="現在お抱えの経営課題やご相談内容をご記入ください。"></textarea>
       </div>
-      <button class="form-submit" onclick="handleSubmit(event)">送信する</button>
-    </div>
+      <button type="submit" class="form-submit">送信する</button>
+    </form>
     <div class="contact-alt">
       <a href="tel:080-6551-3429" class="contact-alt-item">
         <div class="contact-alt-icon">📞</div>
