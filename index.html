@@ -1,697 +1,1384 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MIトラスト合同会社 - 経営課題に当事者として参画し、売上・利益拡大を実現する戦略パートナー">
-    <title>MIトラスト合同会社 | 企業変革サービス</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIトラスト合同会社 | 企業変革パートナーシップ</title>
+<meta name="description" content="経営者の想いを、現場の変革へ。MIトラストは経営アジェンダの言語化から変革戦略の設計、実装・定着まで一気通貫で伴走する企業変革パートナーです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --blue: #1a5fd6;
+    --blue-mid: #2b6cb8;
+    --blue-light: #e8f0fb;
+    --gold: #c9922a;
+    --gold-light: #fdf3e3;
+    --gray-900: #111827;
+    --gray-700: #374151;
+    --gray-500: #6b7280;
+    --gray-200: #e5e7eb;
+    --gray-50: #f9fafb;
+    --white: #ffffff;
+    --font-jp: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+    --font-en: 'DM Serif Display', serif;
+    --transition: 0.3s ease;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-jp);
+    color: var(--gray-900);
+    background: var(--white);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+    height: 64px;
+    display: flex; align-items: center;
+    transition: box-shadow var(--transition);
+  }
+  nav.scrolled { box-shadow: var(--shadow-md); }
+  .nav-inner {
+    max-width: 1140px; margin: 0 auto; width: 100%;
+    padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--navy);
+  }
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: var(--blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 20px; height: 20px; fill: white; }
+  .logo-text { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; }
+  .nav-links {
+    display: flex; align-items: center; gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; color: var(--gray-700);
+    font-size: 13px; font-weight: 500;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue); color: white !important;
+    padding: 8px 18px; border-radius: 6px;
+    font-size: 13px !important; font-weight: 600 !important;
+    transition: background var(--transition) !important;
+  }
+  .nav-cta:hover { background: var(--navy) !important; color: white !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(150deg, var(--navy) 0%, #1a3a6e 50%, #1a5fd6 100%);
+    display: flex; align-items: center;
+    padding: 100px 24px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-bg-blob {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(26,95,214,0.4) 0%, transparent 70%);
+    right: -150px; top: 50%; transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1140px; margin: 0 auto; width: 100%;
+    position: relative; z-index: 1;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+    padding: 6px 14px; border-radius: 100px; margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold); border-radius: 50%;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(36px, 5vw, 60px);
+    color: white;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255,255,255,0.75);
+    font-weight: 400; margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .hero-ai-quote {
+    display: inline-block;
+    border-left: 3px solid var(--gold);
+    padding: 10px 16px;
+    background: rgba(201,146,42,0.12);
+    border-radius: 0 6px 6px 0;
+    color: rgba(255,255,255,0.9);
+    font-size: 14px; line-height: 1.7; margin-bottom: 40px;
+  }
+  .hero-buttons {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 14px 28px; border-radius: 8px;
+    font-size: 15px; font-weight: 700;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: all var(--transition);
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #e0a030; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,146,42,0.4); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.4); color: white;
+    padding: 14px 28px; border-radius: 8px;
+    font-size: 15px; font-weight: 500;
+    text-decoration: none; cursor: pointer;
+    transition: all var(--transition);
+    display: inline-block;
+    background: transparent;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    flex-wrap: wrap;
+  }
+  .stat-item { color: white; }
+  .stat-num {
+    font-family: var(--font-en);
+    font-size: 38px; line-height: 1;
+    color: var(--gold); margin-bottom: 4px;
+  }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 96px 24px; }
+  .container { max-width: 1140px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--blue); text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 3vw, 38px);
+    color: var(--navy); line-height: 1.35;
+    font-weight: 700; margin-bottom: 16px;
+  }
+  .section-lead {
+    font-size: 15px; color: var(--gray-500); max-width: 600px; line-height: 1.8;
+  }
+  .section-header { margin-bottom: 56px; }
+
+  /* ─── FOR (ターゲット) ─── */
+  #for { background: var(--gray-50); }
+  .for-pain-box {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 40px 48px;
+    margin-bottom: 48px;
+  }
+  .for-pain-box h3 {
+    font-family: var(--font-serif);
+    color: white; font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.4; margin-bottom: 8px;
+  }
+  .for-pain-box p { color: rgba(255,255,255,0.65); font-size: 14px; }
+  .pain-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .pain-item {
+    background: white; border-radius: 12px;
+    padding: 24px 28px;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition);
+  }
+  .pain-item:hover { box-shadow: var(--shadow-md); }
+  .pain-label {
+    font-size: 13px; font-weight: 700; color: var(--blue);
+    margin-bottom: 6px;
+  }
+  .pain-item p { font-size: 13px; color: var(--gray-700); line-height: 1.65; }
+  .for-cta {
+    margin-top: 40px; text-align: center;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+    border-radius: 12px; padding: 24px;
+    color: white; font-size: 16px; font-weight: 600;
+  }
+
+  /* ─── WHY (強みの構造) ─── */
+  #why { background: white; }
+  .pillars-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 24px; margin-bottom: 32px;
+  }
+  .pillar-card {
+    border: 2px solid var(--blue-light);
+    border-top: 4px solid var(--blue);
+    border-radius: 12px; padding: 32px 28px;
+    background: white;
+    transition: all var(--transition);
+  }
+  .pillar-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+  .pillar-num {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--blue); margin-bottom: 10px;
+  }
+  .pillar-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
+  .pillar-body { font-size: 13px; color: var(--gray-700); line-height: 1.8; }
+  .pillar-body strong { color: var(--navy); }
+  .ai-base {
+    background: var(--navy);
+    border-radius: 12px; padding: 24px 32px;
+    display: flex; align-items: center; gap: 32px;
+    flex-wrap: wrap;
+  }
+  .ai-base-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.6);
+  }
+  .ai-base-title {
+    font-size: 18px; font-weight: 700; color: white;
+    margin-bottom: 4px;
+  }
+  .ai-base-quote { font-size: 14px; color: rgba(255,255,255,0.75); }
+  .ai-traits {
+    display: flex; gap: 16px; flex-wrap: wrap; margin-left: auto;
+  }
+  .trait-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    padding: 6px 14px; border-radius: 100px; font-size: 13px;
+  }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--gray-50); }
+  .steps-bar {
+    display: flex; gap: 0; margin-bottom: 48px;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+  .step-tab {
+    flex: 1; padding: 20px 16px; text-align: center;
+    cursor: pointer; background: white;
+    border-right: 1px solid var(--gray-200);
+    transition: all var(--transition);
+  }
+  .step-tab:last-child { border-right: none; }
+  .step-tab.active { background: var(--blue); }
+  .step-tab-num {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--blue); margin-bottom: 4px;
+  }
+  .step-tab.active .step-tab-num { color: rgba(255,255,255,0.7); }
+  .step-tab-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .step-tab.active .step-tab-name { color: white; }
+  .step-tab-period { font-size: 11px; color: var(--gray-500); margin-top: 2px; }
+  .step-tab.active .step-tab-period { color: rgba(255,255,255,0.65); }
+  .step-content { display: none; }
+  .step-content.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .step-main h3 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .step-period-badge {
+    display: inline-block; background: var(--blue-light);
+    color: var(--blue); font-size: 12px; font-weight: 600;
+    padding: 4px 12px; border-radius: 100px; margin-bottom: 20px;
+  }
+  .step-desc { font-size: 14px; color: var(--gray-700); line-height: 1.8; margin-bottom: 28px; }
+  .process-list { list-style: none; }
+  .process-list li {
+    display: flex; gap: 14px; align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .process-num {
+    width: 28px; height: 28px; min-width: 28px;
+    background: var(--blue); color: white;
+    border-radius: 50%; font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .process-list li div { }
+  .process-title { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .process-body { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
+  .deliverable-box {
+    background: var(--navy); border-radius: 12px; padding: 28px;
+    color: white;
+  }
+  .deliverable-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .deliverable-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+  .deliverable-items { list-style: none; }
+  .deliverable-items li {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 14px; color: rgba(255,255,255,0.85);
+    margin-bottom: 8px;
+  }
+  .deliverable-items li::before {
+    content: '●'; color: var(--gold); font-size: 8px;
+  }
+  .nopaint-points { margin-top: 20px; }
+  .nopaint-title { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 12px; }
+  .nopaint-item { font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 10px; line-height: 1.65; }
+  .nopaint-item strong { color: white; }
+  .variation-cards { display: flex; flex-direction: column; gap: 16px; }
+  .var-card {
+    background: white; border-radius: 10px; padding: 20px 24px;
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--blue);
+  }
+  .var-card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 8px;
+  }
+  .var-name { font-size: 15px; font-weight: 700; color: var(--navy); }
+  .var-badge {
+    font-size: 11px; font-weight: 600; color: white;
+    background: var(--blue); padding: 3px 10px; border-radius: 100px;
+  }
+  .var-desc { font-size: 13px; color: var(--gray-700); line-height: 1.65; margin-bottom: 10px; }
+  .var-kpi { font-size: 12px; color: var(--blue); font-weight: 600; }
+
+  /* ─── RESULTS ─── */
+  #results { background: white; }
+  .cases-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .case-card {
+    border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .case-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+  .case-header {
+    padding: 20px 24px;
+    background: var(--navy);
+  }
+  .case-industry {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.6); margin-bottom: 6px;
+  }
+  .case-title { font-size: 16px; font-weight: 700; color: white; }
+  .case-type {
+    display: inline-block; margin-top: 10px;
+    font-size: 11px; font-weight: 600; color: var(--navy);
+    background: var(--gold); padding: 3px 10px; border-radius: 100px;
+  }
+  .case-body { padding: 24px; background: white; }
+  .case-section-title { font-size: 11px; font-weight: 700; color: var(--gray-500); letter-spacing: 0.05em; margin-bottom: 6px; }
+  .case-text { font-size: 13px; color: var(--gray-700); line-height: 1.7; margin-bottom: 16px; }
+  .case-action {
+    font-size: 13px; color: var(--gray-700); line-height: 1.7; margin-bottom: 20px;
+    padding: 12px 14px;
+    background: var(--blue-light); border-radius: 8px;
+  }
+  .case-kpis { display: flex; flex-direction: column; gap: 8px; }
+  .case-kpi {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 14px; background: var(--gray-50); border-radius: 8px;
+  }
+  .kpi-label { font-size: 13px; color: var(--gray-700); }
+  .kpi-val { font-size: 20px; font-weight: 700; color: var(--blue); font-family: var(--font-en); }
+  .note-small { font-size: 11px; color: var(--gray-500); margin-top: 16px; text-align: right; }
+
+  /* ─── OUTCOME ─── */
+  #outcome { background: var(--gray-50); }
+  .outcome-grid {
+    display: grid; grid-template-columns: repeat(2,1fr);
+    gap: 24px;
+  }
+  .outcome-card {
+    background: white; border-radius: 12px; padding: 28px;
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--gold);
+    box-shadow: var(--shadow-sm);
+  }
+  .outcome-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .outcome-body { font-size: 14px; color: var(--gray-700); line-height: 1.75; }
+  .outcome-bottom {
+    margin-top: 40px; text-align: center;
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px; padding: 24px 32px;
+    font-size: 15px; color: var(--navy); font-weight: 600;
+    line-height: 1.7;
+  }
+  .outcome-bottom em { color: var(--blue); font-style: normal; }
+
+  /* ─── FLOW (始め方) ─── */
+  #flow { background: white; }
+  .flow-steps {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 0; position: relative;
+  }
+  .flow-steps::before {
+    content: '';
+    position: absolute;
+    top: 48px; left: calc(33.333% + 0px); right: calc(33.333% + 0px);
+    height: 2px; background: var(--blue-light); z-index: 0;
+  }
+  .flow-step {
+    padding: 0 24px; text-align: center; position: relative; z-index: 1;
+  }
+  .flow-num {
+    width: 56px; height: 56px;
+    background: var(--blue); color: white;
+    border-radius: 50%; font-size: 18px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 16px rgba(26,95,214,0.3);
+  }
+  .flow-step:first-child .flow-num { background: var(--gold); }
+  .flow-step-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .flow-step-body { font-size: 13px; color: var(--gray-700); line-height: 1.75; margin-bottom: 12px; }
+  .flow-badge {
+    display: inline-block; font-size: 12px; font-weight: 600;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 4px 12px; border-radius: 100px;
+  }
+  .flow-contact-box {
+    margin-top: 56px;
+    background: var(--navy);
+    border-radius: 16px; padding: 32px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .flow-contact-box p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+  .flow-contact-box strong { font-size: 18px; color: white; display: block; }
+  .flow-contacts { display: flex; gap: 32px; flex-wrap: wrap; }
+  .flow-contact-item {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.85); font-size: 14px;
+  }
+  .flow-contact-icon { font-size: 16px; }
+
+  /* ─── PROFILE ─── */
+  #profile { background: var(--gray-50); }
+  .profile-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: start; }
+  .profile-card {
+    background: white; border-radius: 16px; padding: 32px;
+    box-shadow: var(--shadow-md); text-align: center;
+  }
+  .profile-avatar {
+    width: 100px; height: 100px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+  }
+  .profile-name {
+    font-family: var(--font-serif);
+    font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 4px;
+  }
+  .profile-title { font-size: 13px; color: var(--gray-500); margin-bottom: 20px; }
+  .career-list { list-style: none; text-align: left; }
+  .career-item {
+    display: flex; gap: 12px; padding: 10px 0;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .career-item:last-child { border-bottom: none; }
+  .career-dot {
+    width: 8px; height: 8px; min-width: 8px;
+    background: var(--blue); border-radius: 50%; margin-top: 6px;
+  }
+  .career-company { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .career-role { font-size: 12px; color: var(--gray-500); }
+  .profile-message { }
+  .profile-message blockquote {
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 2.5vw, 24px);
+    color: var(--navy); line-height: 1.5;
+    border-left: 4px solid var(--blue);
+    padding-left: 20px; margin-bottom: 28px;
+    font-weight: 700;
+  }
+  .profile-section { margin-bottom: 24px; }
+  .profile-section h4 {
+    font-size: 14px; font-weight: 700; color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .profile-section p { font-size: 14px; color: var(--gray-700); line-height: 1.8; }
+
+  /* ─── ABOUT ─── */
+  #about { background: white; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .about-vision {
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 2.8vw, 32px);
+    color: var(--navy); line-height: 1.4;
+    font-weight: 700; margin-bottom: 20px;
+  }
+  .about-vision-body { font-size: 14px; color: var(--gray-700); line-height: 1.9; }
+  .about-table { width: 100%; border-collapse: collapse; }
+  .about-table tr { border-bottom: 1px solid var(--gray-200); }
+  .about-table th {
+    width: 100px; padding: 16px 0;
+    font-size: 13px; color: var(--gray-500); font-weight: 500;
+    vertical-align: top; text-align: left;
+  }
+  .about-table td {
+    padding: 16px 0; padding-left: 16px;
+    font-size: 14px; color: var(--navy); font-weight: 500;
+    vertical-align: top;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact { background: var(--navy); padding: 80px 24px; }
+  .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .contact-inner .section-tag { color: var(--gold); }
+  .contact-inner .section-heading { color: white; }
+  .contact-inner .section-lead { color: rgba(255,255,255,0.65); margin: 0 auto 48px; }
+  .contact-form {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px; padding: 40px;
+    text-align: left;
+  }
+  .form-row { margin-bottom: 20px; }
+  .form-row label {
+    display: block; font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,0.75); margin-bottom: 6px;
+  }
+  .form-row label span { color: var(--gold); margin-left: 4px; }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: white;
+    font-family: var(--font-jp);
+    font-size: 14px;
+    transition: border-color var(--transition);
+    appearance: none;
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    background: rgba(255,255,255,0.12);
+  }
+  .form-row input::placeholder, .form-row textarea::placeholder {
+    color: rgba(255,255,255,0.3);
+  }
+  .form-row select option { background: var(--navy); color: white; }
+  .form-row textarea { height: 120px; resize: vertical; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%; padding: 16px;
+    background: var(--gold); color: var(--navy);
+    border: none; border-radius: 8px;
+    font-family: var(--font-jp);
+    font-size: 16px; font-weight: 700; cursor: pointer;
+    transition: all var(--transition); margin-top: 8px;
+  }
+  .form-submit:hover { background: #e0a030; transform: translateY(-2px); }
+  .contact-alt {
+    display: flex; justify-content: center; gap: 40px;
+    margin-top: 32px; flex-wrap: wrap;
+  }
+  .contact-alt-item {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.75); font-size: 14px;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .contact-alt-item:hover { color: white; }
+  .contact-alt-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0a1526; padding: 40px 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo-icon {
+    width: 28px; height: 28px; background: var(--blue);
+    border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  }
+  .footer-logo-icon svg { width: 16px; height: 16px; fill: white; }
+  .footer-logo-text { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75); }
+  .footer-nav { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+  .footer-nav a {
+    text-decoration: none; font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    transition: color var(--transition);
+  }
+  .footer-nav a:hover { color: rgba(255,255,255,0.8); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+  /* ─── SCROLL ANIMATION ─── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; gap: 16px; position: fixed; top: 64px; left: 0; right: 0; background: white; padding: 24px; box-shadow: var(--shadow-md); z-index: 99; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+    section { padding: 64px 20px; }
+    .pillars-grid, .cases-grid, .flow-steps { grid-template-columns: 1fr; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .step-content.active { grid-template-columns: 1fr; }
+    .profile-grid, .about-grid, .outcome-grid { grid-template-columns: 1fr; }
+    .steps-bar { flex-direction: column; }
+    .step-tab { border-right: none; border-bottom: 1px solid var(--gray-200); }
+    .hero-stats { gap: 28px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .flow-steps::before { display: none; }
+    .for-pain-box { padding: 28px 24px; }
+    .flow-contact-box { flex-direction: column; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .ai-base { flex-direction: column; gap: 16px; }
+    .ai-traits { margin-left: 0; }
+  }
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <a href="#hero">
-                        <img src="https://www.genspark.ai/api/files/s/X2YKw85o" alt="MIトラスト合同会社" class="logo-image">
-                        <span class="logo-text logo-blue">MIトラスト</span>
-                    </a>
-                </div>
-                <button class="mobile-toggle" id="mobile-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#hero" class="nav-link">ホーム</a></li>
-                    <li><a href="#why" class="nav-link">選ばれる理由</a></li>
-                    <li><a href="#services" class="nav-link">サービス</a></li>
-                    <li><a href="#results" class="nav-link">実績</a></li>
-                    <li><a href="#about" class="nav-link">会社概要</a></li>
-                    <li><a href="#contact" class="nav-link btn-contact">お問い合わせ</a></li>
-                </ul>
-            </div>
+
+<!-- ── NAV ─────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      </div>
+      <span class="logo-text">MIトラスト合同会社</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#for">こんな経営者に</a></li>
+      <li><a href="#why">選ばれる理由</a></li>
+      <li><a href="#services">サービス</a></li>
+      <li><a href="#results">支援実績</a></li>
+      <li><a href="#profile">代表</a></li>
+      <li><a href="#about">会社概要</a></li>
+      <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-blob"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">企業変革パートナーシップ</div>
+    <h1 class="hero-title">
+      経営者の想いを、<br>現場の変革へ。
+    </h1>
+    <p class="hero-sub">
+      伴走型プログラムのご案内。<br>
+      「言語化 → 戦略設計 → 実装・定着」まで一気通貫で共に動きます。
+    </p>
+    <div class="hero-ai-quote">
+      考える力は、人間から。広げる力は、AIから。<br>決める力は、また人間へ。
+    </div>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">無料相談を申し込む</a>
+      <a href="#services" class="btn-outline">サービス詳細を見る</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">+23%</div>
+        <div class="stat-label">平均単価向上（実績）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">+40%</div>
+        <div class="stat-label">受注率改善（実績）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3.2×</div>
+        <div class="stat-label">CxO面談数増加（実績）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">25年</div>
+        <div class="stat-label">グローバル経営支援経験</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOR (ターゲット) ───────────────── -->
+<section id="for">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">こんな経営者に</div>
+      <h2 class="section-heading">トップは孤独だ。<br>誰にも本音を話せず、判断を一人で抱え込んでいる。</h2>
+      <p class="section-lead">頑張っているのに、組織が変わらない。そのもどかしさと焦燥感。その本当の理由を、一緒に「言語化」するところから始めます。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item fade-up">
+        <div class="pain-label">戦略の現場断絶</div>
+        <p>戦略は描けても現場への落とし込みが甘く、具体的なアクションに繋がらない。</p>
+      </div>
+      <div class="pain-item fade-up">
+        <div class="pain-label">ターゲットの曖昧さ</div>
+        <p>狙うべき顧客が定まらず商談数が伸びない。結果、良質な案件が積み上がらない。</p>
+      </div>
+      <div class="pain-item fade-up">
+        <div class="pain-label">構想止まりの新規事業</div>
+        <p>素晴らしい構想はあるが、既存事業にリソースが埋没して一向に進まない。</p>
+      </div>
+      <div class="pain-item fade-up">
+        <div class="pain-label">主導権なき提案</div>
+        <p>顧客要望への対応に終始し、自社が主導権を握った価値提案ができていない。</p>
+      </div>
+    </div>
+    <div class="for-cta" style="margin-top:32px;">
+      その本当の理由を、一緒に「言語化」するところから始めます。
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY (強みの構造) ──────────────── -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">他にはない強みの構造</div>
+      <h2 class="section-heading">3つの柱が、変革を<br>絵に描いた餅にしない。</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card fade-up">
+        <div class="pillar-num">柱 01</div>
+        <div class="pillar-title">モヤモヤの言語化</div>
+        <div class="pillar-body">
+          経営者との深い対話・壁打ちを通じ潜在的な課題や想いを言語化。<br><br>
+          <strong>「何となく不安」を「確信のある戦略」へ変える。</strong>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    経営課題に当事者として参画し、<br>
-                    <span class="highlight">売上・利益拡大を実現する</span><br>
-                    戦略パートナー
-                </h1>
-                <p class="hero-subtitle">
-                    提言で終わらず「設計 → 実装 → 定着」までをやり遂げる企業変革サービス
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">+10～15%</div>
-                        <div class="stat-label">売上成長（実績）</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">+20%</div>
-                        <div class="stat-label">CxO面談増加</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3ヶ月</div>
-                        <div class="stat-label">設計→実装→定着</div>
-                    </div>
-                </div>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">お問い合わせ</a>
-                    <a href="#services" class="btn btn-secondary">サービス詳細</a>
-                </div>
-            </div>
+      </div>
+      <div class="pillar-card fade-up">
+        <div class="pillar-num">柱 02</div>
+        <div class="pillar-title">グローバル × 日本の独自メソッド</div>
+        <div class="pillar-body">
+          グローバル標準フレームワークと日系大手CxOとの対話で得た暗黙知を融合。<br><br>
+          <strong>貴社のリソースに最適化して提供。</strong>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+      </div>
+      <div class="pillar-card fade-up">
+        <div class="pillar-num">柱 03</div>
+        <div class="pillar-title">経営〜現場 一気通貫伴走</div>
+        <div class="pillar-body">
+          戦略を作って終わりではない。石川自身が現場に入り込む。<br><br>
+          <strong>経営層の想いを現場へ届け、組織が自走するまで共に動く。</strong>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="ai-base">
+      <div>
+        <div class="ai-base-label">土台</div>
+        <div class="ai-base-title">人間力 × AI</div>
+        <div class="ai-base-quote">考える力は人間から。広げる力はAIから。決める力はまた人間へ。</div>
+      </div>
+      <div class="ai-traits">
+        <span class="trait-tag">共感力</span>
+        <span class="trait-tag">発想力</span>
+        <span class="trait-tag">交渉力</span>
+        <span class="trait-tag">文脈力</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Why MITrust Section -->
-    <section id="why" class="section why-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">なぜMIトラストか？</h2>
-                <p class="section-subtitle">
-                    経営課題に当事者として参画し、提言で終わらず<br>
-                    「設計→実装→定着」までをやり遂げます
-                </p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-number">01</div>
-                    <div class="why-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="why-title">経営アジェンダ起点</h3>
-                    <p class="why-description">
-                        貴社の経営課題「モヤモヤ」を言語化
-                    </p>
-                    <div class="why-comparison">
-                        <div class="comparison-item">
-                            <span class="comparison-label">一般コンサル</span>
-                            <span class="comparison-value">提言中心</span>
-                        </div>
-                        <div class="comparison-vs">→</div>
-                        <div class="comparison-item highlight">
-                            <span class="comparison-label">MIトラスト</span>
-                            <span class="comparison-value">設計→実装→定着</span>
-                        </div>
-                    </div>
-                </div>
+<!-- ── SERVICES ─────────────────────── -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">提供サービス</div>
+      <h2 class="section-heading">3ステップで、<br>変革を確実に実装する。</h2>
+      <p class="section-lead">標準期間：3ヶ月〜。絵に描いた餅にしない「実装前提設計」と「週次レビュー」による確実な前進。</p>
+    </div>
+    <div class="steps-bar">
+      <div class="step-tab active" onclick="showStep(0)">
+        <div class="step-tab-num">STEP 1</div>
+        <div class="step-tab-name">経営モヤモヤの言語化</div>
+        <div class="step-tab-period">〜1ヶ月</div>
+      </div>
+      <div class="step-tab" onclick="showStep(1)">
+        <div class="step-tab-num">STEP 2</div>
+        <div class="step-tab-name">変革戦略の設計</div>
+        <div class="step-tab-period">〜1ヶ月</div>
+      </div>
+      <div class="step-tab" onclick="showStep(2)">
+        <div class="step-tab-num">STEP 3</div>
+        <div class="step-tab-name">実装・定着（伴走支援）</div>
+        <div class="step-tab-period">2ヶ月〜</div>
+      </div>
+    </div>
 
-                <div class="why-card">
-                    <div class="why-number">02</div>
-                    <div class="why-icon">
-                        <i class="fas fa-check-double"></i>
-                    </div>
-                    <h3 class="why-title">提言で終わらない</h3>
-                    <p class="why-description">
-                        現場実装・定着まで伴走
-                    </p>
-                    <div class="why-comparison">
-                        <div class="comparison-item">
-                            <span class="comparison-label">研修</span>
-                            <span class="comparison-value">行動変容が一過性</span>
-                        </div>
-                        <div class="comparison-vs">→</div>
-                        <div class="comparison-item highlight">
-                            <span class="comparison-label">MIトラスト</span>
-                            <span class="comparison-value">現場運用に落とし込み</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-number">03</div>
-                    <div class="why-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="why-title">週次で改善を回す</h3>
-                    <p class="why-description">
-                        KPI/ダッシュボード運用
-                    </p>
-                    <div class="why-comparison">
-                        <div class="comparison-item">
-                            <span class="comparison-label">通常</span>
-                            <span class="comparison-value">月次レビュー</span>
-                        </div>
-                        <div class="comparison-vs">→</div>
-                        <div class="comparison-item highlight">
-                            <span class="comparison-label">MIトラスト</span>
-                            <span class="comparison-value">週次PDCAで定着</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="why-card">
-                    <div class="why-number">04</div>
-                    <div class="why-icon">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h3 class="why-title">統合実装</h3>
-                    <p class="why-description">
-                        分断施策ではなく成果に直結
-                    </p>
-                    <div class="why-comparison">
-                        <div class="comparison-item">
-                            <span class="comparison-label">代理店</span>
-                            <span class="comparison-value">施策が分断</span>
-                        </div>
-                        <div class="comparison-vs">→</div>
-                        <div class="comparison-item highlight">
-                            <span class="comparison-label">MIトラスト</span>
-                            <span class="comparison-value">統合実装で成果直結</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Step 1 -->
+    <div class="step-content active" id="step-0">
+      <div class="step-main">
+        <span class="step-period-badge">期間：〜1ヶ月</span>
+        <h3>経営アジェンダの言語化</h3>
+        <p class="step-desc">経営課題のモヤモヤを対話・壁打ちで言語化。「変えたいこと」を明確な経営アジェンダとして言葉にする。</p>
+        <ul class="process-list">
+          <li>
+            <div class="process-num">1</div>
+            <div><div class="process-title">ヒアリング（深い対話）</div><div class="process-body">経営者・幹部との対話セッション。表面的な課題だけでなく、背景にある想いや感情まで掘り下げる。</div></div>
+          </li>
+          <li>
+            <div class="process-num">2</div>
+            <div><div class="process-title">整理・構造化</div><div class="process-body">課題・想い・制約条件をフレームワークで整理。複雑に絡み合った事象を解きほぐす。</div></div>
+          </li>
+          <li>
+            <div class="process-num">3</div>
+            <div><div class="process-title">言語化（アジェンダ策定）</div><div class="process-body">整理された内容を、組織を動かすためのシンプルな「経営アジェンダ」として言葉にする。</div></div>
+          </li>
+          <li>
+            <div class="process-num">4</div>
+            <div><div class="process-title">合意・確認</div><div class="process-body">ステークホルダーと認識を合わせ、変革の起点（北極星）として確定させる。</div></div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="deliverable-box">
+          <div class="deliverable-label">成果物 deliverable</div>
+          <div class="deliverable-title">経営アジェンダ</div>
+          <ul class="deliverable-items">
+            <li>北極星（目指す姿）</li>
+            <li>重要KPI（変革指標）</li>
+            <li>変えたいこと・優先順位</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Results Section -->
-    <section id="results" class="section results-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">実績</h2>
-                <p class="section-subtitle">
-                    大手企業での実績が証明する確かな成果
-                </p>
-            </div>
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-company">
-                        <i class="fas fa-building"></i>
-                        <span>大手ITサービスベンダー</span>
-                    </div>
-                    <h3 class="result-title">CxO接点と売上の同時改善</h3>
-                    <div class="result-metrics">
-                        <div class="metric">
-                            <div class="metric-value">+20%</div>
-                            <div class="metric-label">CxO面談増加 (YoY)</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">+15%</div>
-                            <div class="metric-label">売上増加 (YoY)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-company">
-                        <i class="fas fa-industry"></i>
-                        <span>大手製造業</span>
-                    </div>
-                    <h3 class="result-title">プラットフォームサービス売上拡大</h3>
-                    <div class="result-metrics">
-                        <div class="metric">
-                            <div class="metric-value">+10%</div>
-                            <div class="metric-label">前年比売上 (YoY)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-company">
-                        <i class="fas fa-microchip"></i>
-                        <span>半導体商社</span>
-                    </div>
-                    <h3 class="result-title">意思決定に直結する上流伴走</h3>
-                    <div class="result-metrics">
-                        <div class="metric">
-                            <div class="metric-value">3社</div>
-                            <div class="metric-label">新規テリトリー指名</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div style="margin-top:20px; background:#f0f4ff; border-radius:10px; padding:20px;">
+          <div class="nopaint-title" style="color:var(--blue); font-weight:700; font-size:13px; margin-bottom:8px;">石川CEOだからできる理由</div>
+          <p style="font-size:13px; color:var(--gray-700); line-height:1.75;">外資系半導体・Gartner（IT調査）での約25年の経験で培った「形式知」と、日系大手CxOとの感情から課題を紐解く「暗黙知」を統合。<br><br>単なるロジカルシンキングではなく、経営者の機微を汲み取った納得感の高い言語化を実現します。</p>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Services Section -->
-    <section id="services" class="section services-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">提供サービス</h2>
-                <p class="section-subtitle">
-                    経営アジェンダを土台に、売り物・売り方・売る人を変革する<br>
-                    サービスパッケージを提供
-                </p>
-            </div>
-
-            <!-- Service Overview -->
-            <div class="service-overview">
-                <div class="service-overview-item foundation">
-                    <div class="service-icon">
-                        <i class="fas fa-compass"></i>
-                    </div>
-                    <h3>経営アジェンダの言語化</h3>
-                    <ul>
-                        <li>変革ストーリーの作成</li>
-                        <li>会議体設計 / 実装伴走</li>
-                        <li>北極星/KPI 明確化</li>
-                    </ul>
-                    <div class="service-result">
-                        合意リードタイム <strong>▲30～50%</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-three-pillars">
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <i class="fas fa-box"></i>
-                    </div>
-                    <h3 class="pillar-title">売り物の変革</h3>
-                    <ul class="pillar-features">
-                        <li>勝てる顧客像/価値提案を再設計</li>
-                        <li>サービスパッケージ、価格・契約モデルのレビュー</li>
-                    </ul>
-                    <div class="pillar-results">
-                        <span class="result-badge">平均単価 ↑</span>
-                        <span class="result-badge">粗利率 ↑</span>
-                    </div>
-                </div>
-
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <i class="fas fa-route"></i>
-                    </div>
-                    <h3 class="pillar-title">売り方の変革</h3>
-                    <ul class="pillar-features">
-                        <li>重点顧客の攻略設計</li>
-                        <li>週次レビュー、案件化・受注改善</li>
-                    </ul>
-                    <div class="pillar-results">
-                        <span class="result-badge">SQL化率 ↑</span>
-                        <span class="result-badge">Win rate ↑</span>
-                    </div>
-                </div>
-
-                <div class="pillar-card">
-                    <div class="pillar-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="pillar-title">売る人の変革</h3>
-                    <ul class="pillar-features">
-                        <li>顧客のCxO目線で活動</li>
-                        <li>ロープレ、同行伴走、現場定着</li>
-                    </ul>
-                    <div class="pillar-results">
-                        <span class="result-badge">CxO面談数 ↑</span>
-                        <span class="result-badge">到達率 ↑</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Detailed Services -->
-            <div class="service-details">
-                <div class="service-detail-card">
-                    <div class="service-detail-header">
-                        <div class="service-detail-icon">
-                            <i class="fas fa-compass"></i>
-                        </div>
-                        <h3 class="service-detail-title">経営アジェンダの言語化</h3>
-                    </div>
-                    <div class="service-detail-content">
-                        <div class="service-challenges">
-                            <h4>課題</h4>
-                            <ul>
-                                <li>部門間で「最重要課題」がズレ、Whyが不明確</li>
-                                <li>投資判断が点在し、全社最適にならない</li>
-                            </ul>
-                        </div>
-                        <div class="service-solutions">
-                            <h4>解決</h4>
-                            <ul>
-                                <li>CxO起点で経営アジェンダを一本化</li>
-                                <li>意思決定条件と北極星/KPIを明確化</li>
-                            </ul>
-                        </div>
-                        <div class="service-timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-month">1ヶ月</div>
-                                <div class="timeline-content">CxO/キーマンインタビュー<br>論点整理・示唆抽出</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">2ヶ月</div>
-                                <div class="timeline-content">役員ワークショップ<br>アジェンダ草案・KPI案</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">3ヶ月</div>
-                                <div class="timeline-content">合意形成／ロードマップ<br>意思決定条件の確定</div>
-                            </div>
-                        </div>
-                        <div class="service-outcomes">
-                            <h4>期待効果</h4>
-                            <div class="outcomes-grid">
-                                <span class="outcome-badge">意思決定リードタイム ▲30～50%</span>
-                                <span class="outcome-badge">優先順位の一本化</span>
-                                <span class="outcome-badge">案件選別精度の向上</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-detail-card">
-                    <div class="service-detail-header">
-                        <div class="service-detail-icon">
-                            <i class="fas fa-box"></i>
-                        </div>
-                        <h3 class="service-detail-title">売り物の変革支援</h3>
-                    </div>
-                    <div class="service-detail-content">
-                        <div class="service-challenges">
-                            <h4>課題</h4>
-                            <ul>
-                                <li>「誰に何を解決するか」が曖昧で、価格勝負化しやすい</li>
-                                <li>メニューが乱立し、提案が個別対応・単発化（値引き増）</li>
-                            </ul>
-                        </div>
-                        <div class="service-solutions">
-                            <h4>解決</h4>
-                            <ul>
-                                <li>価値提案を再定義し、顧客×課題×KPIで焦点を明確化</li>
-                                <li>オファリングをパッケージ化し、価格・契約モデルを設計</li>
-                            </ul>
-                        </div>
-                        <div class="service-timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-month">1ヶ月</div>
-                                <div class="timeline-content">顧客/失注/競合のVoC<br>勝ち筋・差別化要因を特定</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">2ヶ月</div>
-                                <div class="timeline-content">価値提案 再定義<br>顧客×課題×KPIで言語化</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">3ヶ月</div>
-                                <div class="timeline-content">パッケージ/価格/契約<br>提供範囲・手順・条件を整備</div>
-                            </div>
-                        </div>
-                        <div class="service-outcomes">
-                            <h4>期待効果</h4>
-                            <div class="outcomes-grid">
-                                <span class="outcome-badge">平均単価・LTV 向上</span>
-                                <span class="outcome-badge">粗利率 改善</span>
-                                <span class="outcome-badge">値引き依存の低下</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-detail-card">
-                    <div class="service-detail-header">
-                        <div class="service-detail-icon">
-                            <i class="fas fa-route"></i>
-                        </div>
-                        <h3 class="service-detail-title">売り方の変革支援</h3>
-                    </div>
-                    <div class="service-detail-content">
-                        <div class="service-challenges">
-                            <h4>課題</h4>
-                            <ul>
-                                <li>リードは取れるが商談化・受注に繋がらない</li>
-                                <li>営業×マーケ連携が弱く、追客が属人化</li>
-                                <li>ファネル定義・KPIが曖昧で改善不能</li>
-                            </ul>
-                        </div>
-                        <div class="service-solutions">
-                            <h4>解決</h4>
-                            <ul>
-                                <li>GTM～運用まで一体設計（GTM/ABM）</li>
-                                <li>SLA・KPIを整備し、週次PDCAを定着</li>
-                                <li>データによる可視化でボトルネック特定</li>
-                            </ul>
-                        </div>
-                        <div class="service-timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-month">1ヶ月</div>
-                                <div class="timeline-content">GTM/ABM 設計<br>狙う市場・接点シナリオ定義</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">2ヶ月</div>
-                                <div class="timeline-content">SLA / KPI 設定<br>MQL→SQL条件・ハンドオフ整備</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">3ヶ月</div>
-                                <div class="timeline-content">週次運用 / 改善<br>DBで可視化しPDCAを定着</div>
-                            </div>
-                        </div>
-                        <div class="service-outcomes">
-                            <h4>期待効果</h4>
-                            <div class="outcomes-grid">
-                                <span class="outcome-badge">SQL化率・Win rate 向上</span>
-                                <span class="outcome-badge">セールスサイクル 短縮</span>
-                                <span class="outcome-badge">CAC / パイプライン効率 改善</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-detail-card">
-                    <div class="service-detail-header">
-                        <div class="service-detail-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="service-detail-title">売る人の変革支援</h3>
-                    </div>
-                    <div class="service-detail-content">
-                        <div class="service-challenges">
-                            <h4>課題</h4>
-                            <ul>
-                                <li>御用聞き化・製品説明/値引き依存で価格決定力が弱い</li>
-                                <li>複数プロダクト横断の統合提案ができず、案件が小粒化</li>
-                            </ul>
-                        </div>
-                        <div class="service-solutions">
-                            <h4>解決</h4>
-                            <ul>
-                                <li>経営アジェンダ起点のメッセージを整備</li>
-                                <li>CxOアプローチを仕組み化し、継続運用で定着</li>
-                            </ul>
-                        </div>
-                        <div class="service-timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-month">1ヶ月</div>
-                                <div class="timeline-content">CxO向けアジェンダ紙<br>決裁者に届く骨子・論点を作成</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">2ヶ月</div>
-                                <div class="timeline-content">メッセージ台本<br>経営課題→ユースケースを言語化</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">3ヶ月</div>
-                                <div class="timeline-content">ロープレ/同行＋週次レビュー<br>KPIで運用を継続・改善</div>
-                            </div>
-                        </div>
-                        <div class="service-outcomes">
-                            <h4>期待効果</h4>
-                            <div class="outcomes-grid">
-                                <span class="outcome-badge">CxO面談数・到達率の向上</span>
-                                <span class="outcome-badge">統合提案の定着</span>
-                                <span class="outcome-badge">クロスセル/アップセル率向上</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Step 2 -->
+    <div class="step-content" id="step-1">
+      <div class="step-main">
+        <span class="step-period-badge">期間：〜1ヶ月</span>
+        <h3>変革戦略の設計</h3>
+        <p class="step-desc">言語化したアジェンダをもとに「誰に・何を・どう売るか」を実装前提で設計。絵に描いた餅にならない戦略を作る。</p>
+        <ul class="process-list">
+          <li>
+            <div class="process-num" style="background:var(--gold);">誰</div>
+            <div><div class="process-title">ターゲット設計</div><div class="process-body">どの顧客・市場にリソースを集中すべきか。成長のボトルネックとなっているターゲットの曖昧さを解消し、重点顧客と優先度を明確化。</div></div>
+          </li>
+          <li>
+            <div class="process-num" style="background:var(--gold);">何</div>
+            <div><div class="process-title">提供価値の設計</div><div class="process-body">顧客にとっての「真の価値」は何か。独りよがりなプロダクトアウトから脱却し、「売り物」としての価値を再定義する。</div></div>
+          </li>
+          <li>
+            <div class="process-num" style="background:var(--gold);">どう</div>
+            <div><div class="process-title">アプローチ設計</div><div class="process-body">どう届け、どう売り、どう関係を深めるか。現場が実行可能なアクションプランとして、実装前提で組み立てる。</div></div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="deliverable-box">
+          <div class="deliverable-label">成果物 deliverable</div>
+          <div class="deliverable-title">変革ロードマップ</div>
+          <ul class="deliverable-items">
+            <li>重要KPI</li>
+            <li>優先施策</li>
+            <li>実行タイムライン</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">会社概要</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-message">
-                    <h3 class="about-message-title">代表メッセージ</h3>
-                    
-                    <div class="ceo-intro">
-                        <div class="ceo-photo">
-                            <img src="https://www.genspark.ai/api/files/s/6XiOFsek" alt="石川真琴 MIトラスト合同会社 CEO" loading="lazy">
-                        </div>
-                        <div class="ceo-info">
-                            <div class="ceo-name-large">石川 真琴</div>
-                            <div class="ceo-title-large">MIトラスト合同会社 CEO</div>
-                            <div class="ceo-experience">
-                                韓国留学 / シンガポール駐在<br>
-                                Micron / Arm / Gartner
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h4 class="about-vision">
-                        子どもたちが将来憧れる、<br>
-                        グローバル競争力を持つ企業を日本から
-                    </h4>
-                    <div class="about-message-text">
-                        <p>当社創業の背景には、「子どもたちが将来憧れる、グローバル競争力を持つ企業をこの国から創出したい」という強い想いがあります。</p>
-                        <p>1989年、世界の時価総額ランキング上位50社のうち32社を日本企業が占め、グローバルで圧倒的な存在感を示していました。しかし、バブル崩壊以降、日本企業のプレゼンスは大きく変化し、現在では同ランキング上位に入る日本企業は限られています。</p>
-                        <p>私自身、韓国留学やシンガポール駐在、米マイクロン・英アームといった外資系半導体メーカー、調査会社である米ガートナーでの職務経験を通じて、多様な価値観に触れ、日本の強み・弱みを客観的に理解する機会を得ました。その経験が、「この国に恩返しをしたい」という想いへとつながっています。</p>
-                        <p class="message-highlight">MIトラストは、経営アジェンダを起点に変革を設計し、実装・定着まで伴走することで、企業の競争力を高め、次世代グローバル企業の創出に貢献してまいります。</p>
-                    </div>
-                </div>
-
-                <div class="company-info-card">
-                    <h3 class="company-info-title">会社情報</h3>
-                    <div class="company-info-grid">
-                        <div class="info-item">
-                            <div class="info-label">会社名</div>
-                            <div class="info-value">MIトラスト合同会社</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">設立</div>
-                            <div class="info-value">2024年6月</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">代表者</div>
-                            <div class="info-value">石川 真琴</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">所在地</div>
-                            <div class="info-value">東京都中央区</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">事業内容</div>
-                            <div class="info-value">企業の変革支援（売り物・売り方・売る人）</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label">経験</div>
-                            <div class="info-value">韓国留学 / シンガポール駐在 / Micron / Arm / Gartner</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div style="margin-top:20px; background:#f0f4ff; border-radius:10px; padding:20px;">
+          <div style="font-weight:700; font-size:13px; color:var(--blue); margin-bottom:10px;">絵に描いた餅にしないポイント</div>
+          <p style="font-size:13px; color:var(--gray-700); margin-bottom:8px; line-height:1.7;"><strong>実装コストの先行試算</strong>　実行可能かを最初に検証。リソース・期間・コストを戦略に組み込み、無理な計画を排除。</p>
+          <p style="font-size:13px; color:var(--gray-700); margin-bottom:8px; line-height:1.7;"><strong>STEP3と連動して設計</strong>　どの変革軸（売り物・売り方・売る人）で実装するかを決定し、シームレスに移行。</p>
+          <p style="font-size:13px; color:var(--gray-700); line-height:1.7;"><strong>週次レビューできる粒度</strong>　大きな戦略をKPIと週次行動に落とし込み、現場が迷わず動ける実行サイクルを設計。</p>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">お問い合わせ</h2>
-                <p class="section-subtitle">
-                    企業変革に関するご相談は、お気軽にお問い合わせください
-                </p>
+    <!-- Step 3 -->
+    <div class="step-content" id="step-2">
+      <div class="step-main">
+        <span class="step-period-badge">期間：2ヶ月〜</span>
+        <h3>実装・定着（3つの変革軸）</h3>
+        <p class="step-desc">変革ロードマップに基づき、課題に最適な軸を選択して実装・定着まで伴走。「やり方」を教えるだけでなく、「できる」ようになるまで石川自身が現場に入り伴走します。</p>
+        <div class="variation-cards">
+          <div class="var-card">
+            <div class="var-card-header">
+              <div class="var-name">売り物の変革</div>
+              <div class="var-badge">価格競争・利益率低下の解消</div>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>電話</h4>
-                            <a href="tel:080-6551-3429" class="contact-link">080-6551-3429</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>メール</h4>
-                            <a href="mailto:makoto.ishikawa@mi-trust.net" class="contact-link" style="white-space: nowrap;">makoto.ishikawa@mi-trust.net</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdadqjaz" method="POST">
-                        <div class="form-group">
-                            <label for="company">会社名 <span class="required">*</span></label>
-                            <input type="text" id="company" name="company" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">お名前 <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">メールアドレス <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">電話番号</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">ご興味のあるサービス</label>
-                            <select id="service" name="service">
-                                <option value="">選択してください</option>
-                                <option value="agenda">経営アジェンダの言語化</option>
-                                <option value="product">売り物の変革支援</option>
-                                <option value="sales">売り方の変革支援</option>
-                                <option value="people">売る人の変革支援</option>
-                                <option value="all">全てのサービスに興味がある</option>
-                                <option value="other">その他</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit">送信する</button>
-                    </form>
-                    <div class="form-message" id="form-message"></div>
-                </div>
+            <p class="var-desc">「この価格でこの価値」を言語化し、提案書と価格体系を再設計。安売りからの脱却を図る。</p>
+            <div class="var-kpi">成果目安：平均単価 +20〜25%　粗利率 +8pt</div>
+          </div>
+          <div class="var-card" style="border-left-color:var(--gold);">
+            <div class="var-card-header">
+              <div class="var-name">売り方の変革</div>
+              <div class="var-badge" style="background:var(--gold);">営業・マーケ連携不全の解消</div>
             </div>
+            <p class="var-desc">重点顧客（ターゲットアカウント）を絞り込み、週次レビューで営業×マーケの連携を構造化。</p>
+            <div class="var-kpi" style="color:var(--gold);">成果目安：受注率 +40%　商談化リード 2倍超</div>
+          </div>
+          <div class="var-card" style="border-left-color:#1ab8a6;">
+            <div class="var-card-header">
+              <div class="var-name">売る人の変革</div>
+              <div class="var-badge" style="background:#1ab8a6;">対CxOアクセス力の強化</div>
+            </div>
+            <p class="var-desc">CxO向けメッセージを構築し、ロープレと同行で現場定着。担当者止まりの営業から脱却。</p>
+            <div class="var-kpi" style="color:#1ab8a6;">成果目安：CxO面談数 3倍超　到達率 +55%</div>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="footer-logo-container">
-                        <img src="https://www.genspark.ai/api/files/s/X2YKw85o" alt="MIトラスト合同会社" class="footer-logo-image">
-                        <h3 class="logo-blue">MIトラスト</h3>
-                    </div>
-                    <p>経営課題に当事者として参画し、<br>売上・利益拡大を実現する戦略パートナー</p>
-                </div>
-                <div class="footer-links">
-                    <h4>サイトマップ</h4>
-                    <ul>
-                        <li><a href="#hero">ホーム</a></li>
-                        <li><a href="#why">選ばれる理由</a></li>
-                        <li><a href="#services">サービス</a></li>
-                        <li><a href="#results">実績</a></li>
-                        <li><a href="#about">会社概要</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>お問い合わせ</h4>
-                    <p><i class="fas fa-phone"></i> 080-6551-3429</p>
-                    <p><i class="fas fa-envelope"></i> makoto.ishikawa@mi-trust.net</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MIトラスト合同会社 All Rights Reserved.</p>
-            </div>
+      </div>
+      <div>
+        <div class="deliverable-box">
+          <div class="deliverable-label">実装プロセス</div>
+          <div class="deliverable-title" style="font-size:16px; margin-bottom:20px;">3フェーズで自走化</div>
+          <div style="margin-bottom:12px; padding:14px; background:rgba(255,255,255,0.08); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:4px;">実装フェーズ</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.6);">施策の実行と初期検証</div>
+          </div>
+          <div style="margin-bottom:12px; padding:14px; background:rgba(255,255,255,0.08); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:4px;">定着フェーズ</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.6);">週次レビューによる習慣化</div>
+          </div>
+          <div style="padding:14px; background:rgba(255,255,255,0.08); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:4px;">自走フェーズ</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.6);">組織内での自律的改善</div>
+          </div>
+          <div style="margin-top:20px; padding:16px; background:rgba(201,146,42,0.15); border-radius:8px; border:1px solid rgba(201,146,42,0.3);">
+            <p style="font-size:13px; color:rgba(255,255,255,0.85); line-height:1.7;">「やり方」を教えるだけでなく、「できる」ようになるまで石川自身が現場に入り伴走します。</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+<!-- ── RESULTS ──────────────────────── -->
+<section id="results">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">支援実績・ケーススタディ</div>
+      <h2 class="section-heading">実際の支援事例をもとにした<br>参考シナリオ。</h2>
+      <p class="section-lead">※実際の支援事例をもとにした参考シナリオです</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card fade-up">
+        <div class="case-header">
+          <div class="case-industry">製造業・中堅企業</div>
+          <div class="case-title">価格競争から脱却できず、利益率が低迷</div>
+          <div class="case-type">売り物の変革</div>
+        </div>
+        <div class="case-body">
+          <div class="case-section-title">課題</div>
+          <p class="case-text">新製品の技術力はあるが、顧客への訴求価値が言語化できていなかった。</p>
+          <div class="case-section-title">施策</div>
+          <div class="case-action">顧客課題×自社強みのマッピングで提案書と価格体系を再設計。「機能」ではなく「価値」の言語化を徹底。</div>
+          <div class="case-kpis">
+            <div class="case-kpi"><span class="kpi-label">平均単価</span><span class="kpi-val">+23%</span></div>
+            <div class="case-kpi"><span class="kpi-label">粗利率改善</span><span class="kpi-val">+8pt</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-card fade-up">
+        <div class="case-header" style="background:#1a3a6e;">
+          <div class="case-industry">IT・SaaS企業</div>
+          <div class="case-title">リードは取れるが商談化・受注に繋がらない</div>
+          <div class="case-type">売り方の変革</div>
+        </div>
+        <div class="case-body">
+          <div class="case-section-title">課題</div>
+          <p class="case-text">マーケティングが生成するリードを営業が追いきれていない。連携不足で商談化率・受注率ともに低迷。</p>
+          <div class="case-section-title">施策</div>
+          <div class="case-action">ターゲットアカウントを絞り込み、週次レビューで営業×マーケの連携を構造化。高確度リードへの集中を実現。</div>
+          <div class="case-kpis">
+            <div class="case-kpi"><span class="kpi-label">受注率</span><span class="kpi-val">+40%</span></div>
+            <div class="case-kpi"><span class="kpi-label">商談化リード</span><span class="kpi-val">2.1倍</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-card fade-up">
+        <div class="case-header" style="background:#1a4a3a;">
+          <div class="case-industry">専門サービス業</div>
+          <div class="case-title">担当者がCxOにアクセスできず、案件が現場止まり</div>
+          <div class="case-type">売る人の変革</div>
+        </div>
+        <div class="case-body">
+          <div class="case-section-title">課題</div>
+          <p class="case-text">提案が経営課題に刺さらず失注が続いていた。御用聞きから脱却できていなかった。</p>
+          <div class="case-section-title">施策</div>
+          <div class="case-action">CxO向けメッセージを構築し、ロープレと同行で現場定着を実現。「御用聞き」から「パートナー」へ変革。</div>
+          <div class="case-kpis">
+            <div class="case-kpi"><span class="kpi-label">CxO面談数</span><span class="kpi-val">3.2倍</span></div>
+            <div class="case-kpi"><span class="kpi-label">到達率</span><span class="kpi-val">+55%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note-small">※数値はケーススタディ想定値（参考）</p>
+  </div>
+</section>
 
-    <script src="js/script.js"></script>
+<!-- ── OUTCOME (3ヶ月後) ─────────────── -->
+<section id="outcome">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">3ヶ月後の貴社の状態</div>
+      <h2 class="section-heading">MIトラストの支援を経た企業に<br>起きる、確かな変化。</h2>
+    </div>
+    <div class="outcome-grid">
+      <div class="outcome-card fade-up">
+        <div class="outcome-title">自走する組織へ</div>
+        <p class="outcome-body">経営の想いが現場の隅々まで浸透。「言われたからやる」のではなく、社員が自ら考え、動き出す組織へと変貌します。</p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-title">前向きな活気と収益</div>
+        <p class="outcome-body">収益の柱となる新たな予兆が見え始めます。成功体験が自信となり、社内に明るく前向きな活気が生まれます。</p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-title">CxOとの直接対話</div>
+        <p class="outcome-body">担当者止まりだった営業が、CxOレベルと直接対話できるように。経営課題に踏み込んだ提案が日常化します。</p>
+      </div>
+      <div class="outcome-card fade-up">
+        <div class="outcome-title">「まず相談したい」</div>
+        <p class="outcome-body">単なる業者ではなく、真のビジネスパートナーへ。顧客から「あなたにまず相談したい」と言われる関係性を築きます。</p>
+      </div>
+    </div>
+    <div class="outcome-bottom">
+      変革は痛みを伴いますが、その先には<em>「景色が変わる瞬間」</em>が必ず待っています。
+    </div>
+  </div>
+</section>
+
+<!-- ── FLOW (始め方) ─────────────────── -->
+<section id="flow">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">まず、ここから始めましょう</div>
+      <h2 class="section-heading">リスクのない小さな一歩から、<br>大きな変革へ。</h2>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">01</div>
+        <div class="flow-step-title">無料オンライン相談</div>
+        <p class="flow-step-body">経営課題・お悩みを自由にお話しください。秘密厳守。義務・勧誘は一切ありません。</p>
+        <span class="flow-badge">30分・費用ゼロ</span>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--navy);">02</div>
+        <div class="flow-step-title">診断 &amp; 提案</div>
+        <p class="flow-step-body">ヒアリング内容をもとに、変革の優先軸と具体的なアプローチをご提案します。</p>
+        <span class="flow-badge">1週間以内・体験プラン可</span>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num" style="background:var(--navy);">03</div>
+        <div class="flow-step-title">プログラム開始</div>
+        <p class="flow-step-body">合意後、STEP1から伴走を開始。最短1ヶ月でロードマップが完成します。</p>
+        <span class="flow-badge">最短1ヶ月で成果物納品</span>
+      </div>
+    </div>
+    <div class="flow-contact-box">
+      <div>
+        <p>お気軽にご相談ください</p>
+        <strong>まずはメール一本、またはWebフォームから</strong>
+      </div>
+      <div class="flow-contacts">
+        <a href="mailto:makoto.ishikawa@mi-trust.net" class="flow-contact-item" style="text-decoration:none;">
+          <span class="flow-contact-icon">✉</span>
+          makoto.ishikawa@mi-trust.net
+        </a>
+        <a href="tel:080-6551-3429" class="flow-contact-item" style="text-decoration:none;">
+          <span class="flow-contact-icon">📞</span>
+          080-6551-3429
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROFILE ──────────────────────── -->
+<section id="profile">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">代表プロフィール</div>
+      <h2 class="section-heading">なぜこの仕事をするのか</h2>
+    </div>
+    <div class="profile-grid">
+      <div>
+        <div class="profile-card">
+          <div class="profile-avatar">👤</div>
+          <div class="profile-name">石川 真琴</div>
+          <div class="profile-title">MIトラスト合同会社 CEO</div>
+          <ul class="career-list">
+            <li class="career-item">
+              <div class="career-dot"></div>
+              <div>
+                <div class="career-company">Gartner（米）</div>
+                <div class="career-role">Global Client Director Team Lead / 国内外50社超支援</div>
+              </div>
+            </li>
+            <li class="career-item">
+              <div class="career-dot"></div>
+              <div>
+                <div class="career-company">Arm（英）</div>
+                <div class="career-role">半導体エコシステム構築 / グローバルパートナー戦略</div>
+              </div>
+            </li>
+            <li class="career-item">
+              <div class="career-dot"></div>
+              <div>
+                <div class="career-company">Micron Technology（米）</div>
+                <div class="career-role">アジア市場向けセールス / 大手顧客担当</div>
+              </div>
+            </li>
+            <li class="career-item">
+              <div class="career-dot"></div>
+              <div>
+                <div class="career-company">STMicroelectronics（瑞）</div>
+                <div class="career-role">マーケティング戦略</div>
+              </div>
+            </li>
+          </ul>
+          <div style="margin-top:16px; font-size:12px; color:var(--gray-500);">韓国留学 / シンガポール駐在</div>
+        </div>
+      </div>
+      <div class="profile-message">
+        <blockquote>
+          私は、成長の壁に直面した経営者の"孤独"を誰よりも理解し、その隣で共に判断し動く伴走者でありたい。
+        </blockquote>
+        <div class="profile-section">
+          <h4>孤独への共感</h4>
+          <p>25年のキャリアで数百名の経営者と向き合う中で、「社員には弱音を吐けない」「最終判断の重圧を一人で背負っている」という孤独がいかに深いかを、目の当たりにしてきました。だからこそ、まず最初に"言語化"から始め、本音を引き出すのです。</p>
+        </div>
+        <div class="profile-section">
+          <h4>グローバル × 実装</h4>
+          <p>GartnerでのCxOアドバイザリー経験と、海外現場での泥臭い実装経験。この2つを融合させ、グローバル標準のフレームワークを日本の中堅・中小企業の現場が動ける形に翻訳して届けます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Vision</div>
+      <h2 class="section-heading">会社概要・代表メッセージ</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <div class="about-vision">
+          子どもたちが将来憧れる、グローバル競争力を持つ企業を日本から創出する。
+        </div>
+        <p class="about-vision-body">
+          1989年、世界の時価総額ランキング上位50社のうち32社を日本企業が占め、グローバルで圧倒的な存在感を示していました。しかしバブル崩壊以降、日本企業のプレゼンスは大きく低下しています。<br><br>
+          韓国留学・シンガポール駐在・米Micron・英Arm・米Gartnerでの経験を通じ日本の強みと弱みを客観的に理解しました。その経験が「この国に恩返しをしたい」という想いへとつながっています。<br><br>
+          MIトラストは、経営アジェンダを起点に変革を設計し、実装・定着まで伴走することで、企業の競争力を高め、次世代グローバル企業の創出に貢献してまいります。
+        </p>
+        <div style="margin-top:20px; font-size:14px; color:var(--gray-500);">MIトラスト合同会社 CEO<br><strong style="color:var(--navy); font-size:18px; font-family:var(--font-serif);">石川 真琴</strong></div>
+      </div>
+      <div>
+        <table class="about-table">
+          <tr>
+            <th>会社名</th>
+            <td>MIトラスト合同会社</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>2024年6月</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>石川 真琴</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>東京都中央区</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>企業の変革支援<br>（売り物・売り方・売る人の変革伴走）</td>
+          </tr>
+          <tr>
+            <th>経験</th>
+            <td>韓国留学 / シンガポール駐在<br>Micron / Arm / STMicroelectronics / Gartner</td>
+          </tr>
+          <tr>
+            <th>連絡先</th>
+            <td>
+              makoto.ishikawa@mi-trust.net<br>
+              080-6551-3429<br>
+              www.mi-trust.net
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ──────────────────────── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">お問い合わせ</div>
+    <h2 class="section-heading">企業変革に関するご相談は、<br>お気軽にどうぞ。</h2>
+    <p class="section-lead">秘密厳守。まずは30分の無料オンライン相談から始められます。</p>
+    <div class="contact-form">
+      <div class="form-grid">
+        <div class="form-row">
+          <label>会社名<span>*</span></label>
+          <input type="text" placeholder="株式会社〇〇">
+        </div>
+        <div class="form-row">
+          <label>お名前<span>*</span></label>
+          <input type="text" placeholder="石川 太郎">
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label>メールアドレス<span>*</span></label>
+          <input type="email" placeholder="example@company.com">
+        </div>
+        <div class="form-row">
+          <label>電話番号</label>
+          <input type="tel" placeholder="03-0000-0000">
+        </div>
+      </div>
+      <div class="form-row">
+        <label>ご興味のあるサービス</label>
+        <select>
+          <option value="">選択してください</option>
+          <option>STEP1: 経営アジェンダの言語化</option>
+          <option>STEP3: 売り物の変革</option>
+          <option>STEP3: 売り方の変革</option>
+          <option>STEP3: 売る人の変革</option>
+          <option>全てのサービスに興味がある</option>
+          <option>まずは話を聞きたい</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>お問い合わせ内容<span>*</span></label>
+        <textarea placeholder="現在お抱えの経営課題やご相談内容をご記入ください。"></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(event)">送信する</button>
+    </div>
+    <div class="contact-alt">
+      <a href="tel:080-6551-3429" class="contact-alt-item">
+        <div class="contact-alt-icon">📞</div>
+        080-6551-3429
+      </a>
+      <a href="mailto:makoto.ishikawa@mi-trust.net" class="contact-alt-item">
+        <div class="contact-alt-icon">✉</div>
+        makoto.ishikawa@mi-trust.net
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      </div>
+      <span class="footer-logo-text">MIトラスト合同会社</span>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#for">こんな経営者に</a></li>
+      <li><a href="#why">選ばれる理由</a></li>
+      <li><a href="#services">サービス</a></li>
+      <li><a href="#results">支援実績</a></li>
+      <li><a href="#profile">代表</a></li>
+      <li><a href="#about">会社概要</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 MIトラスト合同会社 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // NAV scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // hamburger
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Step tabs
+  function showStep(idx) {
+    document.querySelectorAll('.step-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+    document.querySelectorAll('.step-content').forEach((c, i) => c.classList.toggle('active', i === idx));
+  }
+
+  // Scroll fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // Form submit placeholder
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('お問い合わせありがとうございます。担当者より折り返しご連絡いたします。');
+  }
+</script>
 </body>
 </html>
