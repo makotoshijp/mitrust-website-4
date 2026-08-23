@@ -614,6 +614,18 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
   font-size:14px;color:var(--navy-sub);line-height:2;
 }
 .contact .c-cta{display:flex;gap:16px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.contact h2 .l-a,.contact h2 .l-b{display:inline}
+.contact h2 .l-c{display:block}
+.contact h2 .l-d{display:inline}
+.ccard{display:flex;flex-direction:column;align-items:center;gap:7px;padding:20px 32px;min-width:280px;text-align:center;text-decoration:none;cursor:pointer;transition:.25s ease}
+.ccard .cc-lbl{font-size:15px;font-weight:500;letter-spacing:.06em}
+.ccard .cc-sub{font-size:13px;letter-spacing:.03em;font-family:var(--sans);font-weight:400;opacity:.92;margin-top:1px}
+.ccard-mail{background:var(--paper);color:var(--navy);border:1px solid var(--paper)}
+.ccard-mail:hover{background:var(--seal-bright);border-color:var(--seal-bright);color:var(--navy)}
+.ccard-mail .cc-sub{color:var(--ink-2);opacity:1}
+.ccard-tel{background:transparent;color:var(--navy-txt);border:1px solid rgba(240,237,228,.42)}
+.ccard-tel:hover{border-color:var(--navy-txt);background:rgba(240,237,228,.06)}
+.ccard-tel .cc-sub{color:inherit;opacity:.85}
 
 /* ---------- footer ---------- */
 .footer{border-top:1px solid var(--navy-line)}
@@ -653,6 +665,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
   to{opacity:1;transform:none}
 }
 .sp{display:none}
+br.desk{display:inline}
+br.mob{display:none}
 
 /* ---------- responsive ---------- */
 @media (max-width:1020px){
@@ -696,6 +710,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
   .proc-grid{grid-template-columns:1fr}
   .ai-lever{grid-template-columns:1fr}
   .brand img{height:40px}
+  br.desk{display:none}
+  br.mob{display:inline}
+  .contact h2 .l-a,.contact h2 .l-b,.contact h2 .l-c,.contact h2 .l-d{display:block}
+  .c-cta .ccard{padding:17px 22px;min-width:0;flex:1 1 210px}
   .btn{font-size:13.5px;padding:15px 26px}
   /* mobile type scale */
   .hero h1{font-size:clamp(2rem,8.2vw,2.25rem);line-height:1.6}
@@ -1043,7 +1061,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
       <div class="fact reveal"><dt>代表者</dt><dd>石川 真琴</dd><dd></dd></div>
       <div class="fact reveal"><dt>所在地</dt><dd>東京都中央区</dd><dd></dd></div>
       <div class="fact reveal"><dt>事業内容</dt><dd>企業変革支援<br><span class="ftag">経営・事業変革 / 営業・アカウント変革 / 変革人材育成 / AI活用・業務変革</span></dd><dd></dd></div>
-      <div class="fact reveal"><dt>連絡先</dt><dd><a href="/cdn-cgi/l/email-protection#6508040e0a110a4b0c160d0c0e04120425080c4811171016114b0b0011"><span class="__cf_email__" data-cfemail="cfa2aea4a0bba0e1a6bca7a6a4aeb8ae8fa2a6e2bbbdbabcbbe1a1aabb">[email&#160;protected]</span></a><br>080-6551-3429</dd><dd><a href="https://mi-trust.net" target="_blank" rel="noopener">www.mi-trust.net</a></dd></div>
+      <div class="fact reveal"><dt>連絡先</dt><dd><a href="/cdn-cgi/l/email-protection#8be6eae0e4ffe4a5e2f8e3e2e0eafceacbe6e2a6fff9fef8ffa5e5eeff"><span class="__cf_email__" data-cfemail="6f020e04001b0041061c0706040e180e2f0206421b1d1a1c1b41010a1b">[email&#160;protected]</span></a><br>080-6551-3429</dd><dd><a href="https://mi-trust.net" target="_blank" rel="noopener">www.mi-trust.net</a></dd></div>
     </dl>
   </div>
 </section>
@@ -1051,11 +1069,17 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
 <section class="navy contact" id="contact">
   <div class="container">
     <div class="in">
-      <h2 class="reveal">課題がまだ言語化できていなくても、<br>その段階からご相談ください</h2>
+      <h2 class="reveal"><span class="l-a">課題がまだ言語化</span><span class="l-b">できていなくても、</span><span class="l-c">その段階から</span><span class="l-d">ご相談ください</span></h2>
       <p class="c-sub reveal">「戦略はあるが進まない」「営業を変えたい」「AI活用を事業・業務に落としたい」「管理職を変革人材にしたい」など、テーマが固まりきっていない状態でも構いません。</p>
       <div class="c-cta reveal">
-        <a class="btn btn-solid" href="/cdn-cgi/l/email-protection#4429252f2b302b6a2d372c2d2f25332504292d6930363137306a2a2130">メールで相談する <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="tel:08065513429">TEL 080-6551-3429</a>
+        <a class="ccard ccard-mail" href="/cdn-cgi/l/email-protection#0e636f65617a6120677d6667656f796f4e6367237a7c7b7d7a20606b7a">
+          <span class="cc-lbl">メールで相談する</span>
+          <span class="cc-sub"><span class="__cf_email__" data-cfemail="771a161c180318591e041f1e1c160016371a1e5a030502040359191203">[email&#160;protected]</span></span>
+        </a>
+        <a class="ccard ccard-tel" href="tel:08065513429">
+          <span class="cc-lbl">電話で相談する</span>
+          <span class="cc-sub">080-6551-3429</span>
+        </a>
       </div>
     </div>
   </div>
