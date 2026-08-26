@@ -252,12 +252,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
 .hero-vert{
   position:absolute;top:clamp(20px,3vw,30px);right:-6px;
   writing-mode:vertical-rl;
+  padding-top:72px;
   font-family:var(--serif);font-weight:600;letter-spacing:.42em;
   font-size:12px;color:var(--steel);
 }
 .hero-vert::before{
-  content:"";display:inline-block;width:1px;height:52px;
-  background:var(--seal);margin-right:10px;
+  content:"";position:absolute;top:0;left:50%;
+  width:1px;height:52px;background:var(--seal);
+  transform:translateX(-50%);
 }
 /* stats */
 .stats{
