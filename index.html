@@ -782,6 +782,129 @@ br.mob{display:none}
 .timeline-row h3{font-size:17px;margin:0 0 6px}.timeline-row p{margin:0;color:var(--muted);font-size:14px;line-height:1.85}
 @media(max-width:1050px){.head-nav{gap:12px}.head-nav .nv{font-size:12px}.contact-layout{gap:38px}}
 @media(max-width:820px){.engagement-grid{grid-template-columns:1fr}.engagement-card{min-height:auto}.contact-layout{grid-template-columns:1fr;gap:34px}.contact-form .form-row{grid-template-columns:1fr}.company-strip{grid-template-columns:1fr 1fr}.founder-facts{grid-template-columns:1fr}.timeline-row{grid-template-columns:1fr;gap:8px}}
+
+
+/* ============================================================
+   2026-08-27 Responsive quality optimization
+   Keep the existing visual system; optimize wrapping and spacing only.
+   ============================================================ */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+body{font-size:clamp(15px,1.15vw,16px)}
+img,svg,video,iframe{max-width:100%;height:auto}
+main,section,.container,.head-in,.footer,.f-in,.f-nav{min-width:0}
+h1,h2,h3,.statement,.statement-lg,.bigline,.pull,.subhero .subcopy{
+  text-wrap:balance;
+  line-break:strict;
+}
+p,li,dd,.lead,.sec-note,.found-bio,.career-body,.policy-item p{
+  text-wrap:pretty;
+  line-break:strict;
+  overflow-wrap:break-word;
+}
+.nowrap{white-space:nowrap}
+.pc-only{display:inline}
+.mobile-only{display:none}
+.btn,.ccard,.m-cta{max-width:100%;box-sizing:border-box}
+.pain,.svc,.case,.prop,.proc,.engagement-card,.achievement,.capability,.edu-card,.business-card,.founder-fact,.timeline-row{min-width:0}
+.profile-row dd,.policy-item,.policy-item p,.timeline-row>*,.contact-form,.contact-form>*{min-width:0}
+.profile-row a,.policy-item a,.founder-summary a{overflow-wrap:anywhere}
+
+/* small PC / tablet landscape: switch to the established mobile navigation
+   before the seven-link desktop nav starts to compress. */
+@media(max-width:1080px){
+  .head-nav{display:none!important}
+  .hero-vert{display:none!important}
+  /* navigation switches before desktop labels compress */
+  .menu-btn{display:flex!important}
+  .mobile-nav{display:block!important}
+}
+
+/* tablet / smartphone foundation */
+@media(max-width:768px){
+  :root{--pad:20px;--sec:clamp(58px,10vw,78px)}
+  .container{padding-left:20px;padding-right:20px}
+  .section,.page-section{padding-block:clamp(58px,10vw,78px)}
+  .pc-only{display:none!important}
+  .mobile-only{display:inline!important}
+
+  h1,h2,h3{letter-spacing:.01em}
+  .sec-title{font-size:clamp(25px,6.5vw,31px);line-height:1.5}
+  .lead,.subhero .subcopy,.page-intro .bodycopy,.founder-summary{font-size:15px;line-height:1.9}
+  .statement{font-size:clamp(24px,6.2vw,30px);line-height:1.65;max-width:20em}
+  .statement-lg{font-size:clamp(24px,6.2vw,30px);line-height:1.7}
+
+  .hero{padding-block:clamp(54px,10vw,72px) clamp(48px,9vw,66px)}
+  .hero h1{font-size:clamp(30px,8vw,38px);line-height:1.48;letter-spacing:.005em}
+  .hero h1 .hero-phrase{display:inline-block}
+  .hero h1 .short{color:var(--seal)}
+  .hero-sub{font-size:15px;line-height:1.9;max-width:36em}
+  .hero-cta{gap:12px}
+
+  .subhero{padding-block:clamp(54px,10vw,72px) clamp(42px,8vw,58px)}
+  .subhero h1{font-size:clamp(31px,8vw,40px);line-height:1.38}
+  .subhero .subcopy{margin-top:18px;max-width:34em}
+  .page-intro .bigline{font-size:clamp(25px,6.4vw,31px);line-height:1.7}
+
+  .pain-grid,.svc-grid,.case-grid,.engagement-grid,.achievement-grid,.capability-grid,.edu-grid,.business-grid{width:100%}
+  .engagement-card,.achievement,.capability,.edu-card,.business-card,.case,.pain,.svc{padding-left:clamp(20px,5.5vw,28px);padding-right:clamp(20px,5.5vw,28px)}
+  .engagement-card h3,.capability h3,.career-title,.timeline-row h3{line-height:1.55;text-wrap:balance}
+
+  .btn{min-height:48px;padding:14px 22px;justify-content:center;line-height:1.35;white-space:nowrap}
+  .contact h2,.page-contact-band h2{font-size:clamp(24px,6.2vw,30px);line-height:1.55;text-wrap:balance}
+  .contact .c-sub{margin-top:20px;line-height:1.9}
+  .page-contact-band{padding-block:46px}
+  .page-contact-band .inner{gap:22px}
+
+  .profile-row{padding:19px 0}
+  .profile-row dt{padding-top:0}
+  .profile-row dd{font-size:14.5px;line-height:1.85}
+  .timeline-row{padding:22px 0}
+  .timeline-row .career-body{font-size:13.5px;line-height:1.85}
+  .timeline-row .career-list li{font-size:12.8px;line-height:1.8}
+
+  .f-btm{align-items:flex-start}
+}
+
+/* large smartphones */
+@media(max-width:430px){
+  .container{padding-left:20px;padding-right:20px}
+  .hero h1{font-size:clamp(30px,8.4vw,36px);line-height:1.5}
+  .hero-tagline{gap:10px}
+  .hero-tagline .logoline{width:32px}
+  .hero-sub{font-size:14.5px;line-height:1.88}
+  .sec-title{font-size:clamp(25px,7vw,29px);line-height:1.52}
+  .statement{font-size:clamp(24px,6.8vw,28px);line-height:1.68}
+  .subhero h1{font-size:clamp(30px,8vw,36px)}
+  .subhero .subcopy{font-size:14.5px;line-height:1.88}
+  .page-intro .bigline{font-size:clamp(24px,6.8vw,29px);line-height:1.72}
+  .hero-cta{display:grid;grid-template-columns:1fr;width:100%}
+  .hero-cta .btn{width:100%}
+  .c-cta .ccard{width:100%;flex-basis:100%}
+  .contact-form{padding:22px 18px}
+  .company-strip{grid-template-columns:1fr 1fr}
+  .f-btm{display:grid;grid-template-columns:1fr;gap:10px}
+}
+
+/* common 390px phones */
+@media(max-width:390px){
+  .hero h1{font-size:31px;line-height:1.5}
+  .sec-title{font-size:26px}
+  .statement{font-size:25px}
+  .contact h2,.page-contact-band h2{font-size:25px}
+  .achievement .a-num{font-size:2rem}
+  .engagement-card,.achievement,.capability,.edu-card,.business-card,.case,.pain,.svc{padding-left:20px;padding-right:20px}
+}
+
+/* compact 375px phones */
+@media(max-width:375px){
+  .hero h1{font-size:30px}
+  .subhero h1{font-size:30px}
+  .sec-title{font-size:25px}
+  .statement{font-size:24px}
+  .btn{font-size:13px;padding-left:18px;padding-right:18px}
+  .eyebrow{gap:10px}
+  .eyebrow .tag{letter-spacing:.17em}
+}
 </style>
 <link href="https://www.mi-trust.net/" rel="canonical"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="MIトラスト合同会社 — 経営課題を、変革テーマと現場の実行へ" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="MIトラスト合同会社 — 経営課題を、変革テーマと現場の実行へ" name="twitter:title"/><meta content="経営・事業・営業・人材・AIを横断し、課題の構造化から変革設計、実装・定着まで。経営層との議論から管理職・現場の実行まで一気通貫で支援します。" name="twitter:description"/><meta content="https://www.mi-trust.net/og-image.png" name="twitter:image"/><script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -819,7 +942,7 @@ br.mob{display:none}
 <a class="nv" href="#approach">アプローチ</a>
 <a class="nv" href="#services">支援領域</a>
 <a class="nv" href="#cases">実績・変革テーマ</a>
-<a class="nv" href="/founder">代表プロフィール</a>
+<a class="nv" href="/founder">CEOプロフィール</a>
 <a class="nv" href="/about">会社概要</a>
 <a class="cta" href="#contact">まず相談する</a>
 </nav>
@@ -834,7 +957,7 @@ br.mob{display:none}
 <a href="#services">4つの支援領域</a>
 <a href="#process">進め方</a>
 <a href="#cases">支援実績・変革テーマ</a>
-<a href="/founder">代表プロフィール</a>
+<a href="/founder">CEOプロフィール</a>
 <a href="/about">会社概要</a>
 <div class="m-sub">
 <a class="m-cta" href="#contact">まず相談する</a>
@@ -845,11 +968,10 @@ br.mob{display:none}
 <div class="paper-tex"></div>
 <div class="container hero-in">
 <p class="hero-tagline"><span class="logoline"></span><span>Business Transformation Partner</span></p>
-<h1>
-      経営課題を、
-      <span class="l2">変革テーマに。</span>
-<span class="l3">変革テーマを、<br class="sp"/><span class="short">現場の実行へ。</span></span>
-</h1>
+<h1><span class="hero-phrase nowrap">経営課題を、</span><br class="mobile-only"/>
+<span class="hero-phrase nowrap">変革テーマに。</span><br/>
+<span class="hero-phrase nowrap">変革テーマを、</span><br class="mobile-only"/>
+<span class="hero-phrase short nowrap">現場の実行へ。</span></h1>
 <p class="hero-sub">経営・事業・営業・人材・AIを横断し、課題の構造化から変革設計、実装・定着まで。MIトラストは、経営層との議論だけで終わらせず、管理職・現場が実際に動くところまで設計します。</p>
 <div class="hero-cta">
 <a class="btn btn-solid" href="#contact">まず相談する <span class="arr">→</span></a>
@@ -869,12 +991,12 @@ br.mob{display:none}
 <section class="section solve" id="solve">
 <div class="container">
 <div class="eyebrow reveal"><span class="seal"></span><span class="tag">What we solve</span><span class="hair"></span></div>
-<p class="statement reveal">いま多くの企業で起きているのは、<br/>「<span class="q">戦略がない</span>」ことではなく、<br/>「<span class="q">実行が変わらない</span>」ことです。</p>
+<p class="statement reveal">いま多くの企業で起きているのは、<br class="pc-only"/>「<span class="q nowrap">戦略がない</span>」ことではなく、<br class="pc-only"/>「<span class="q nowrap">実行が変わらない</span>」ことです。</p>
 <p class="lead reveal">中期計画やDX・AI方針はある。それでも、マネジメントの判断や現場の行動が従来のままであれば、変革は進みません。MIトラストは、その断絶を構造化し、動く仕組みに変えます。</p>
 <div class="pain-grid">
 <div class="pain reveal"><span class="pn">i.</span><h3>戦略と現場の断絶</h3><p>目指す姿は示されているが、部門・管理職・現場の具体行動やKPIまで落ちていない。</p></div>
 <div class="pain reveal"><span class="pn">ii.</span><h3>御用聞き型営業から抜け出せない</h3><p>顧客の依頼やJDへの対応に終始し、経営課題を起点とした提案やCxOとの対話に転換できない。</p></div>
-<div class="pain reveal"><span class="pn">iii.</span><h3>AI活用がPoCで止まる</h3><p>生成AI・AIエージェントを試しているが、データ・業務・役割設計とつながらず、スケールしない。</p></div>
+<div class="pain reveal"><span class="pn">iii.</span><h3>AI活用がPoCで止まる</h3><p>生成AI・<span class="nowrap">AIエージェント</span>を試しているが、データ・業務・役割設計とつながらず、スケールしない。</p></div>
 <div class="pain reveal"><span class="pn">iv.</span><h3>変革を担う人材が育たない</h3><p>正解を待つ、与えられた範囲だけを確実にこなす。仮説を置き、80%で前に進める人材が不足している。</p></div>
 </div>
 <div class="note reveal"><span class="seal"></span><p>経営課題を「経営・マネジメント・現場」の3層で分解し、同時に動かす。制度だけ、研修だけ、システムだけでは変わりません。課題・役割・KPI・行動をつなぎ、現場で検証しながら変革を進めます。</p></div>
@@ -883,7 +1005,7 @@ br.mob{display:none}
 <section class="section navy" id="approach">
 <div class="container">
 <div class="eyebrow reveal"><span class="seal"></span><span class="tag">Approach</span><span class="hair"></span></div>
-<h2 class="sec-title reveal">経営・マネジメント・現場を、<br/>1つの設計としてつなぐ</h2>
+<h2 class="sec-title reveal"><span class="nowrap">経営・マネジメント・現場</span>を、<br class="pc-only"/>1つの設計としてつなぐ</h2>
 <p class="lead reveal">戦略を描くことより、戦略が現場で使われる状態をつくる。経営層との壁打ち、管理職との設計、現場での実践・レビューまでを一気通貫で行います。必要に応じてAIや外部有識者も組み込みます。</p>
 <div class="thread">
 <div class="t-head reveal"><span class="tk">MI TRUST — ONE DESIGN, THREE LAYERS</span><span class="hair"></span></div>
@@ -976,7 +1098,7 @@ br.mob{display:none}
 <h3>AI活用・業務変革</h3>
 <p>AIを単体導入するのではなく、「どの業務を、誰が、どのデータで、どう変えるか」まで設計。現場の仕事の進め方そのものを変えます。</p>
 <ul>
-<li>生成AI・AIエージェント活用テーマ設計</li>
+<li>生成AI・<span class="nowrap">AIエージェント</span>活用テーマ設計</li>
 <li>データ整備と業務プロセスの接続</li>
 <li>営業・提案・人材検索等のAI標準化</li>
 <li>ウォーターフォールからアジャイルへの行動変革</li>
@@ -1049,7 +1171,7 @@ br.mob{display:none}
 <div class="prop reveal">
 <span class="pr-no">04</span>
 <div class="pr-title">技術者・管理職変革プログラム<span class="pr-tag">大手製造業 / CX・デジタル組織</span></div>
-<p class="pr-body">AIエージェント時代を前提に、データ整備・顧客接点・業務を自ら再設計できる部長・課長層を育成。外部変化から山頂仮説を置き、変革テーマ、必要データ、90日アクションまで具体化する。</p>
+<p class="pr-body"><span class="nowrap">AIエージェント</span>時代を前提に、データ整備・顧客接点・業務を自ら再設計できる部長・課長層を育成。外部変化から山頂仮説を置き、変革テーマ、必要データ、90日アクションまで具体化する。</p>
 </div>
 <div class="prop reveal">
 <span class="pr-no">05</span>
@@ -1079,22 +1201,22 @@ br.mob{display:none}
 <section class="section why" id="why">
 <div class="container">
 <div class="eyebrow reveal"><span class="seal"></span><span class="tag">Why MI Trust</span><span class="hair"></span></div>
-<h2 class="sec-title reveal">コンサルでも、研修会社でも、<br/>AI導入会社でもない</h2>
+<h2 class="sec-title reveal">コンサルでも、研修会社でも、<br class="pc-only"/><span class="nowrap">AI導入会社</span>でもない</h2>
 <p class="lead reveal">経営課題から入り、必要な論点を組み合わせ、経営層との議論から現場の具体行動まで同じ責任者がつなぎます。</p>
 <div class="why-rows">
 <div class="why-row reveal"><span class="w-no">01</span><h3>CxO視点から入る</h3><p>経営アジェンダ・投資判断・事業課題から会話を始めます。</p></div>
 <div class="why-row reveal"><span class="w-no">02</span><h3>現場実装まで降りる</h3><p>提言書だけで終わらず、会議・役割・提案・育成・レビューの現場まで具体化します。</p></div>
 <div class="why-row reveal"><span class="w-no">03</span><h3>領域横断でつなぐ</h3><p>経営、事業、営業、人材、AIを別々に扱わず、同じ課題構造の中で設計します。</p></div>
-<div class="why-row reveal"><span class="w-no">04</span><h3>代表自身が案件に入る</h3><p>石川自身が経営層との対話からプログラム設計・実施まで関与します。</p></div>
+<div class="why-row reveal"><span class="w-no">04</span><h3>CEO自身が案件に入る</h3><p>石川自身が経営層との対話からプログラム設計・実施まで関与します。</p></div>
 </div>
 </div>
 </section>
 <section class="section" id="founder"><div class="container">
 <div class="eyebrow reveal"><span class="seal"></span><span class="tag">Founder</span><span class="hair"></span></div>
 <div class="founder-grid"><div class="photo-wrap reveal"><div class="ph-frame"><img alt="MIトラスト合同会社 CEO 石川真琴" src="/profile.jpg"/></div></div>
-<div><div class="founder-head reveal"><h3>石川 真琴</h3><p class="role"><span class="seal-dot"></span>MIトラスト合同会社 CEO</p></div>
+<div><div class="founder-head reveal"><h3>石川 真琴</h3><p class="role"><span class="seal-dot"></span><span class="nowrap">MIトラスト合同会社</span> CEO</p></div>
 <p class="pull reveal">経営者の頭の中にある<span class="red">「まだ言葉になっていない課題」</span>を、現場が動ける変革テーマに変える</p>
-<p class="found-bio reveal">グローバル企業での営業・マーケティング・パートナー戦略と、GartnerでのCxOアドバイザリーを経験。経営層との議論から現場の実行まで、代表自身が案件に入ります</p>
+<p class="found-bio reveal">半導体の現場営業から、アームでのIPライセンス、GartnerでのCxOアドバイザリーまで20年以上。経営層との議論から現場の実行まで、CEO自身が案件に入ります</p>
 <div class="company-strip reveal"><div class="company-chip">GARTNER</div><div class="company-chip">ARM</div><div class="company-chip">MICRON</div><div class="company-chip">STMICROELECTRONICS</div></div>
 <div class="founder-more reveal"><a class="btn btn-ghost" href="/founder">詳しいプロフィール <span class="arr">→</span></a></div></div>
 </div></div></section>
@@ -1126,7 +1248,7 @@ br.mob{display:none}
 <h5>Company</h5>
 <ul>
 <li><a href="#cases">支援実績・変革テーマ</a></li>
-<li><a href="/founder">代表プロフィール</a></li>
+<li><a href="/founder">CEOプロフィール</a></li>
 <li><a href="/about">会社概要</a></li>
 </ul>
 </div>
