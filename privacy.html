@@ -600,32 +600,48 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
 
 /* ---------- footer ---------- */
 .footer{border-top:1px solid var(--navy-line)}
-.f-in{
-  display:flex;align-items:flex-start;justify-content:space-between;gap:32px;
-  padding-block:48px 40px;
+.f-in{padding-block:50px 38px}
+.f-nav{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(36px,7vw,100px);
+  width:100%;
+  max-width:900px;
 }
-.f-brand{display:flex;flex-direction:column;gap:14px}
-.f-brand .fb{display:flex;align-items:center;gap:13px}
-.f-brand img{height:34px;width:auto;filter:brightness(0) invert(1)}
-.f-brand .fbn{font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:.06em}
-.f-brand .fben{font-size:9.5px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--navy-sub)}
-.f-brand p{font-size:12px;color:var(--navy-sub);line-height:1.9}
-.f-nav{display:flex;gap:44px}
+.f-nav h5{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.14em;
+  color:var(--navy-txt);
+  margin-bottom:16px;
+  text-transform:none;
+}
+.f-nav ul{display:flex;flex-direction:column;gap:8px}
 .f-nav ul li a{
-  font-size:12px;color:var(--navy-sub);line-height:2.3;letter-spacing:.05em;
+  display:inline-block;
+  font-size:13.5px;
+  color:var(--navy-sub);
+  line-height:1.85;
+  letter-spacing:.03em;
   transition:color .25s ease;
 }
 .f-nav ul li a:hover{color:var(--navy-txt)}
-.f-nav h5{
-  font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--navy-sub);margin-bottom:10px;
-}
 .f-btm{
   border-top:1px solid var(--navy-line);
   padding:20px 0 26px;
-  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
-.f-btm small{font-size:11px;color:var(--navy-sub);letter-spacing:.08em}
+.f-btm small,.f-btm a{
+  font-size:11px;
+  color:var(--navy-sub);
+  letter-spacing:.06em;
+}
+.f-btm a{transition:color .25s ease}
+.f-btm a:hover{color:var(--navy-txt)}
 
 /* ---------- reveal: deterministic CSS entrance (never hides content) ---------- */
 @media (prefers-reduced-motion: no-preference){
@@ -642,7 +658,6 @@ br.mob{display:none}
 /* ---------- responsive ---------- */
 @media (max-width:1020px){
   .founder-grid{grid-template-columns:320px 1fr}
-  .f-nav{gap:24px}
 }
 @media (max-width:900px){
   .head-nav{display:none}
@@ -675,8 +690,8 @@ br.mob{display:none}
   body{font-size:15px}
   .stats{grid-template-columns:1fr 1fr}
   .twin{grid-template-columns:1fr}
-  .f-in{flex-direction:column}
-  .f-nav{flex-wrap:wrap;gap:28px;justify-content:space-between}
+  .f-nav{grid-template-columns:1fr;gap:30px}
+  .f-nav>div:last-child{grid-column:auto}
   .hero-vert{display:none}
   .proc-grid{grid-template-columns:1fr}
   .ai-lever{grid-template-columns:1fr}
@@ -778,13 +793,40 @@ br.mob{display:none}
 <div class="policy-item"><h2>10. お問い合わせ窓口</h2><p>本ポリシーまたは当社の個人情報の取扱いに関するお問い合わせは、下記までご連絡ください。</p><p style="margin-top:12px">MIトラスト合同会社<br>代表者：石川 真琴<br>所在地：東京都中央区<br>メール：<a href="mailto:makoto.ishikawa@mi-trust.net" style="border-bottom:1px solid var(--line-2)">makoto.ishikawa@mi-trust.net</a><br>電話：<a href="tel:08065513429" style="border-bottom:1px solid var(--line-2)">080-6551-3429</a></p></div>
 <p class="policy-meta">制定日：2026年8月26日</p></div></section>
 </main><footer class="footer navy">
-  <div class="container"><div class="f-in">
-    <div class="f-brand"><span class="fb"><img src="data:image/png;base64,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" onerror="this.onerror=null;this.src='https://mi-trust.net/logo.png'" alt="MIトラスト"><span class="fbn">MIトラスト合同会社</span></span><span class="fben">Business Transformation Partner</span><p>経営課題を、変革テーマに。<br>変革テーマを、現場の実行へ。</p></div>
-    <nav class="f-nav" aria-label="フッターナビゲーション">
-      <div><h5>Services</h5><ul><li><a href="/#solve">課題を構造化する</a></li><li><a href="/#approach">3層アプローチ</a></li><li><a href="/#services">4つの支援領域</a></li><li><a href="/#process">進め方</a></li></ul></div>
-      <div><h5>Company</h5><ul><li><a href="/#cases">支援実績・検討テーマ</a></li><li><a href="/#founder">代表プロフィール</a></li><li><a href="/about">会社概要</a></li></ul></div>
-      <div><h5>Information</h5><ul><li><a href="/#contact">お問い合わせ</a></li><li><a href="/privacy">プライバシーポリシー</a></li></ul></div>
-    </nav>
-  </div></div>
-  <div class="container"><div class="f-btm"><small>© 2026 MIトラスト合同会社 All Rights Reserved.</small></div></div>
+  <div class="container">
+    <div class="f-in">
+      <nav class="f-nav" aria-label="フッターナビゲーション">
+        <div>
+          <h5>Service</h5>
+          <ul>
+            <li><a href="/#solve">課題の構造化</a></li>
+            <li><a href="/#approach">アプローチ</a></li>
+            <li><a href="/#services">支援領域</a></li>
+            <li><a href="/#process">進め方</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/#cases">支援実績・検討テーマ</a></li>
+            <li><a href="/#founder">代表プロフィール</a></li>
+            <li><a href="/about">会社概要</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:makoto.ishikawa@mi-trust.net">メールで相談する</a></li>
+            <li><a href="tel:08065513429">電話で相談する</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="f-btm">
+      <small>© 2026 MIトラスト合同会社. All Rights Reserved.</small>
+      <a href="/privacy">プライバシーポリシー</a>
+    </div>
+  </div>
 </footer><script>(function(){var head=document.querySelector('.site-head');var onScroll=function(){head.classList.toggle('scrolled',window.scrollY>8);};window.addEventListener('scroll',onScroll,{passive:true});onScroll();var btn=document.getElementById('menuBtn'),nav=document.getElementById('mobileNav');var toggle=function(open){btn.classList.toggle('open',open);nav.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':'';};btn.addEventListener('click',function(){toggle(!nav.classList.contains('open'));});nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false);});});})();</script></body></html>
