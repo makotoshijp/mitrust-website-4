@@ -1,0 +1,781 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>会社概要｜MIトラスト合同会社</title><meta name="description" content="MIトラスト合同会社の会社概要。経営・事業・営業・人材・AIを横断し、企業変革を実行まで支援します。"><meta property="og:title" content="会社概要｜MIトラスト合同会社"><meta property="og:description" content="MIトラスト合同会社の会社概要。経営・事業・営業・人材・AIを横断し、企業変革を実行まで支援します。"><meta property="og:type" content="website"><meta property="og:url" content="https://www.mi-trust.net/about"><link rel="canonical" href="https://www.mi-trust.net/about"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet"><style>
+/* ============================================================
+   MIトラスト合同会社 — official site
+   紙 / 墨 / 紺 / 朱 — a Japanese consulting editorial
+   ============================================================ */
+:root{
+  --paper:  #F5F3ED;
+  --paper-2:#EDEAE1;
+  --card:   #FBFAF6;
+  --ink:    #1A1B1E;
+  --ink-2:  #41434A;
+  --steel:  #6E7078;
+  --line:   rgba(26,27,30,.14);
+  --line-2: rgba(26,27,30,.32);
+  --navy:   #17222E;
+  --navy-2: #1E2B39;
+  --navy-line: rgba(236,232,221,.13);
+  --navy-txt:#F0EDE4;
+  --navy-sub:rgba(240,237,228,.7);
+  --seal:   #B04A33;
+  --seal-deep:#8C3A26;
+  --seal-bright:#DE8A68;
+  --serif: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  --numen: 'Cormorant Garamond', Georgia, serif;
+  --cont: 1200px;
+  --pad: clamp(20px, 4.5vw, 48px);
+  --sec: clamp(72px, 9vw, 118px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:15.5px;
+  line-height:1.9;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:var(--seal);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px;border-radius:2px}
+
+.container{max-width:var(--cont);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:var(--sec)}
+.navy{
+  background:var(--navy);
+  color:var(--navy-txt);
+  position:relative;
+  overflow:hidden;
+}
+.navy::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(240,237,228,.05) 1px, transparent 1.3px);
+  background-size:26px 26px;
+  pointer-events:none;
+}
+.navy .hair{background:var(--navy-line)}
+
+/* ---------- eyebrow: the seal motif ---------- */
+.eyebrow{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:clamp(18px,3vw,28px);
+}
+.eyebrow .seal{
+  width:9px;height:9px;background:var(--seal);
+  flex:none;
+}
+.eyebrow .tag{
+  font-size:11px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--seal-deep);
+  white-space:nowrap;
+  padding-top:2px;
+}
+.eyebrow .tag.en{color:var(--seal)}
+.navy .eyebrow .tag, .navy .eyebrow .seal{color:var(--seal-bright)}
+.navy .eyebrow .seal{background:var(--seal-bright)}
+.hair{flex:1;height:1px;background:var(--line)}
+
+/* ---------- type ---------- */
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.45}
+.disp{
+  font-size:clamp(2.1rem,4.8vw,3.55rem);
+  letter-spacing:.02em;
+  line-height:1.5;
+}
+.sec-title{
+  font-size:clamp(1.55rem,2.9vw,2.3rem);
+  line-height:1.55;
+  letter-spacing:.015em;
+}
+.lead{
+  margin-top:clamp(16px,2.4vw,26px);
+  font-size:15.5px;font-weight:400;
+  color:var(--ink-2);
+  max-width:62ch;
+}
+.red{color:var(--seal)}
+.navy .sec-title{color:var(--navy-txt)}
+.navy .lead{color:var(--navy-sub)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:14px;font-weight:500;letter-spacing:.06em;
+  padding:15px 30px;
+  border:1px solid var(--ink);
+  transition:all .25s ease;
+  cursor:pointer;
+}
+.btn .arr{font-family:var(--numen);font-style:italic;font-size:17px;line-height:1}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--seal);border-color:var(--seal)}
+.btn-ghost{border-color:var(--line-2);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(26,27,30,.04)}
+.navy .btn-solid{background:var(--paper);color:var(--navy)}
+.navy .btn-solid:hover{background:var(--seal-bright);color:var(--navy)}
+.navy .btn-ghost{border-color:rgba(240,237,228,.35);color:var(--navy-txt)}
+.navy .btn-ghost:hover{border-color:var(--navy-txt);background:rgba(240,237,228,.07)}
+
+/* ---------- header ---------- */
+.site-head{
+  position:sticky;top:0;z-index:60;
+  background:rgba(245,243,237,.92);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .3s ease;
+}
+.site-head.scrolled{box-shadow:0 6px 24px rgba(26,27,30,.06)}
+.head-in{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;height:74px;
+}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{height:44px;width:auto}
+.brand .bn{display:flex;flex-direction:column;line-height:1.15}
+.brand .bn-jp{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:.04em}
+.brand .bn-en{font-size:9.5px;font-weight:700;letter-spacing:.3em;color:var(--steel);text-transform:uppercase;padding-top:2px}
+.head-nav{display:flex;align-items:center;gap:26px}
+.head-nav a.nv{
+  font-size:13px;font-weight:500;letter-spacing:.05em;color:var(--ink-2);
+  position:relative;padding-block:6px;
+}
+.head-nav a.nv::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+  background:var(--seal);transition:width .3s ease;
+}
+.head-nav a.nv:hover{color:var(--ink)}
+.head-nav a.nv:hover::after{width:100%}
+.head-nav .cta{
+  font-size:13px;font-weight:500;letter-spacing:.06em;
+  padding:11px 22px;background:var(--ink);color:var(--paper);
+  transition:background .25s ease;
+}
+.head-nav .cta:hover{background:var(--seal)}
+.menu-btn{
+  display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;
+}
+.menu-btn span{width:24px;height:1.6px;background:var(--ink);transition:.3s ease}
+.menu-btn.open span:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+
+/* mobile nav */
+.mobile-nav{
+  display:none;position:fixed;inset:0;z-index:55;
+  background:var(--navy);color:var(--navy-txt);
+  padding:100px var(--pad) 40px;
+  opacity:0;visibility:hidden;transition:opacity .3s ease, visibility .3s ease;
+  overflow-y:auto;
+}
+.mobile-nav.open{opacity:1;visibility:visible}
+.mobile-nav a{
+  display:block;font-family:var(--serif);font-size:22px;font-weight:600;
+  padding:16px 0;border-bottom:1px solid var(--navy-line);
+  letter-spacing:.05em;
+}
+.mobile-nav .m-sub{margin-top:30px}
+.mobile-nav .m-cta{
+  display:inline-block;margin-top:34px;padding:15px 34px;
+  background:var(--paper);color:var(--navy);font-size:14px;font-weight:500;
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-block:clamp(70px,10vw,130px) clamp(60px,8vw,100px)}
+.hero .paper-tex{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(26,27,30,.05) 1px, transparent 1.4px);
+  background-size:24px 24px;
+  pointer-events:none;
+}
+.hero-in{position:relative}
+.hero-tagline{
+  display:flex;align-items:center;gap:16px;margin-bottom:clamp(26px,4vw,44px);
+}
+.hero-tagline .logoline{width:46px;height:1px;background:var(--seal)}
+.hero-tagline span{
+  font-size:11.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--seal-deep);
+}
+.hero h1{
+  font-size:clamp(1.95rem,5.4vw,3.9rem);
+  font-weight:700;line-height:1.55;letter-spacing:.02em;
+}
+.hero h1 .l2{display:block;padding-left:clamp(10px,4vw,56px)}
+.hero h1 .l3{display:block;padding-left:clamp(20px,9vw,120px)}
+.hero h1 .l3 .short{color:var(--seal)}
+.hero-sub{
+  margin-top:clamp(26px,4vw,42px);
+  max-width:56ch;
+  font-size:clamp(14.5px,1.6vw,16px);
+  color:var(--ink-2);
+}
+.hero-cta{display:flex;gap:16px;margin-top:clamp(30px,4.5vw,46px);flex-wrap:wrap}
+.hero-vert{
+  position:absolute;top:clamp(20px,3vw,30px);right:-6px;
+  writing-mode:vertical-rl;
+  font-family:var(--serif);font-weight:600;letter-spacing:.42em;
+  font-size:12px;color:var(--steel);
+}
+.hero-vert::before{
+  content:"";display:inline-block;width:1px;height:52px;
+  background:var(--seal);margin-right:10px;
+}
+/* stats */
+.stats{
+  margin-top:clamp(56px,8vw,86px);
+  border-top:1px solid var(--line-2);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat{padding:26px 22px 0 0;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .num{
+  font-family:var(--numen);font-size:clamp(2.3rem,4vw,3.4rem);
+  font-weight:600;line-height:1;letter-spacing:.01em;
+}
+.stat .num em{font-style:italic;color:inherit;font-size:.58em;padding-left:4px}
+.stat .cap{
+  margin-top:12px;font-size:12.5px;font-weight:500;letter-spacing:.04em;
+  color:var(--ink);line-height:1.7;
+}
+.stat .cap small{display:block;color:var(--steel);font-weight:400;font-size:11px;letter-spacing:.08em}
+
+/* ---------- what we solve ---------- */
+.solve{background:var(--paper-2)}
+.statement{
+  font-family:var(--serif);
+  font-size:clamp(1.45rem,2.8vw,2.15rem);
+  font-weight:600;line-height:1.75;letter-spacing:.02em;
+  max-width:26em;
+}
+.statement .q{position:relative;color:var(--seal)}
+.pain-grid{
+  margin-top:clamp(40px,6vw,64px);
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);
+}
+.pain{
+  background:var(--card);
+  padding:clamp(26px,3.5vw,42px);
+}
+.pain .pn{
+  font-family:var(--numen);font-style:italic;font-size:19px;color:var(--seal);
+}
+.pain h3{
+  font-family:var(--serif);font-weight:600;font-size:clamp(18px,2vw,21px);
+  margin-top:8px;line-height:1.5;
+}
+.pain p{margin-top:12px;font-size:14px;color:var(--steel);line-height:1.85}
+.solve .note{
+  margin-top:clamp(34px,5vw,54px);
+  display:flex;gap:18px;align-items:flex-start;
+  padding-top:28px;border-top:1px solid var(--line-2);
+}
+.solve .note .seal{width:10px;height:10px;background:var(--seal);flex:none;margin-top:7px}
+.solve .note p{font-family:var(--serif);font-weight:500;font-size:clamp(15px,1.8vw,17px);line-height:1.9;max-width:46em}
+
+/* ---------- approach: 3-layer thread ---------- */
+.thread{position:relative;margin-top:clamp(46px,6vw,70px)}
+.thread .t-head{
+  display:flex;align-items:center;gap:14px;margin-bottom:22px;
+}
+.thread .t-head .tk{
+  font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--seal-bright);white-space:nowrap;
+}
+.thread .t-head .hair{background:var(--navy-line)}
+.layers{position:relative}
+.layers::before{
+  content:"";position:absolute;left:0;top:16px;bottom:16px;width:1px;
+  background:var(--navy-line);
+}
+.layer{
+  position:relative;
+  display:grid;grid-template-columns:180px 1fr;
+  gap:clamp(20px,3.5vw,48px);
+  padding:26px 0 26px 34px;
+  border-bottom:1px solid var(--navy-line);
+}
+.layer:first-child{border-top:1px solid var(--navy-line)}
+.layer::before{
+  content:"";position:absolute;left:-4px;top:34px;width:9px;height:9px;
+  background:var(--seal-bright);transform:rotate(45deg);
+}
+.layer .l-lv{
+  font-family:var(--numen);font-size:11.5px;font-weight:600;
+  letter-spacing:.3em;color:var(--navy-sub);
+  padding-top:4px;
+}
+.layer .l-name{
+  font-family:var(--serif);font-weight:700;font-size:clamp(20px,2.4vw,26px);
+  margin-top:6px;line-height:1.4;
+}
+.layer .l-what{
+  font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--seal-bright);
+  margin-top:8px;text-transform:uppercase;
+}
+.layer .l-body{padding-top:2px}
+.layer .l-body p{font-size:14.5px;color:var(--navy-sub);max-width:52ch;line-height:1.9}
+.layer .l-tags{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;
+}
+.layer .l-tags span{
+  font-size:11.5px;letter-spacing:.04em;color:var(--navy-txt);
+  border:1px solid var(--navy-line);
+  padding:5px 12px;
+}
+.ai-lever{
+  margin-top:clamp(36px,5vw,52px);
+  border:1px solid var(--navy-line);
+  padding:clamp(24px,3.6vw,40px);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,36px);
+  align-items:start;
+}
+.ai-lever .seal{
+  width:11px;height:11px;background:var(--seal-bright);flex:none;margin-top:9px;
+}
+.ai-lever h3{
+  font-family:var(--serif);font-weight:600;font-size:clamp(17px,2.2vw,21px);
+  line-height:1.65;
+}
+.ai-lever h3 .red{color:var(--seal-bright)}
+.ai-lever p{margin-top:10px;font-size:14px;color:var(--navy-sub);max-width:60ch}
+
+/* ---------- services ---------- */
+.svc-msg{margin-bottom:clamp(14px,2vw,20px)}
+.svc-grid{
+  margin-top:clamp(40px,6vw,62px);
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-left:1px solid var(--line);border-top:1px solid var(--line);
+}
+.svc{
+  position:relative;
+  background:var(--card);
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:clamp(28px,3.6vw,44px);
+  transition:background .3s ease;
+}
+.svc:hover{background:#fff}
+.svc .svc-no{
+  font-family:var(--numen);font-style:italic;font-size:15px;
+  color:var(--seal);letter-spacing:.05em;
+}
+.svc .svc-en{
+  display:block;margin-top:14px;
+  font-size:10.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--steel);
+}
+.svc h3{
+  margin-top:10px;font-family:var(--serif);font-weight:700;
+  font-size:clamp(19px,2.2vw,24px);line-height:1.5;
+}
+.svc>p{margin-top:14px;font-size:14px;color:var(--ink-2);line-height:1.9}
+.svc ul{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
+.svc ul li{
+  position:relative;padding-left:18px;
+  font-size:13px;color:var(--ink-2);line-height:1.8;
+}
+.svc ul li::before{
+  content:"";position:absolute;left:0;top:11px;width:7px;height:2px;background:var(--seal);
+}
+
+/* ---------- how we work ---------- */
+.process{background:var(--paper-2)}
+.proc-grid{
+  margin-top:clamp(42px,6vw,64px);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  position:relative;
+}
+.proc-grid::before{
+  content:"";position:absolute;top:20px;left:0;right:0;height:1px;background:var(--line-2);
+}
+.proc{padding-right:26px;position:relative}
+.proc .p-no{
+  position:relative;font-family:var(--numen);font-size:44px;font-weight:600;line-height:1;
+  color:var(--ink);
+}
+.proc .p-no::after{
+  content:"";position:absolute;left:56px;top:12px;width:9px;height:9px;
+  background:var(--seal);transform:rotate(45deg);
+}
+.proc h3{
+  margin-top:24px;font-family:var(--serif);font-weight:700;
+  font-size:clamp(17px,1.9vw,20px);line-height:1.55;
+}
+.proc p{margin-top:12px;font-size:13.5px;color:var(--steel);line-height:1.85}
+
+/* ---------- cases ---------- */
+.sec-note{
+  margin-top:clamp(16px,2.4vw,24px);
+  font-size:13px;color:var(--steel);max-width:78ch;
+}
+.case-block{margin-top:clamp(46px,6.5vw,70px)}
+.case-block .blk-head{
+  display:flex;align-items:baseline;gap:18px;
+  border-bottom:1px solid var(--line-2);padding-bottom:16px;margin-bottom:30px;
+}
+.case-block .blk-en{
+  font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--seal-deep);
+}
+.case-block .blk-ja{
+  font-family:var(--serif);font-weight:600;font-size:clamp(17px,2vw,21px);
+}
+.case-block .blk-sub{font-size:12.5px;color:var(--steel);margin-left:auto;text-align:right;max-width:34ch;line-height:1.7}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.case{
+  background:var(--card);padding:clamp(24px,3vw,36px);
+  display:flex;flex-direction:column;
+}
+.case .c-no{font-family:var(--numen);font-style:italic;font-size:15px;color:var(--seal)}
+.case .c-title{
+  margin-top:10px;font-family:var(--serif);font-weight:700;font-size:16.5px;line-height:1.6;
+}
+.case .c-tag{
+  display:inline-block;margin-top:12px;
+  font-size:11px;letter-spacing:.06em;color:var(--ink-2);
+  border:1px solid var(--line-2);padding:4px 14px;
+}
+.case .c-k{
+  margin-top:22px;font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--seal-deep);text-transform:uppercase;
+}
+.case .c-kb{
+  margin-top:6px;font-size:13.5px;color:var(--ink-2);line-height:1.85;
+  border-left:2px solid var(--line-2);padding-left:14px;
+}
+.case .c-k.alt{color:var(--steel)}
+.prop-rows{margin-top:0;border-top:1px solid var(--line-2)}
+.prop{
+  display:grid;grid-template-columns:64px 220px 1fr;
+  gap:clamp(14px,2.4vw,32px);
+  padding:22px 6px;border-bottom:1px solid var(--line);
+  align-items:baseline;
+  transition:background .25s ease;
+}
+.prop:hover{background:rgba(176,74,51,.045)}
+.prop .pr-no{font-family:var(--numen);font-style:italic;font-size:16px;color:var(--seal)}
+.prop .pr-title{font-family:var(--serif);font-weight:600;font-size:15.5px;line-height:1.65}
+.prop .pr-tag{display:block;margin-top:5px;font-size:11px;letter-spacing:.05em;color:var(--steel)}
+.prop .pr-body{font-size:13.5px;color:var(--ink-2);line-height:1.85}
+.disc{
+  margin-top:26px;font-size:11.5px;color:var(--steel);letter-spacing:.03em;
+  border-top:1px solid var(--line);padding-top:18px;
+}
+
+/* ---------- why ---------- */
+.why{background:var(--paper-2)}
+.why-rows{margin-top:clamp(40px,6vw,60px);border-top:1px solid var(--line-2)}
+.why-row{
+  display:grid;grid-template-columns:74px 1fr 2fr;
+  gap:clamp(14px,2.4vw,32px);
+  padding:28px 4px;border-bottom:1px solid var(--line);
+  align-items:baseline;
+  transition:padding-left .3s ease;
+}
+.why-row:hover{padding-left:14px}
+.why-row .w-no{font-family:var(--numen);font-style:italic;font-size:20px;color:var(--seal)}
+.why-row h3{font-family:var(--serif);font-weight:700;font-size:clamp(18px,2.2vw,22px);line-height:1.6}
+.why-row p{font-size:14px;color:var(--ink-2);line-height:1.85}
+
+/* ---------- founder ---------- */
+.founder-grid{
+  display:grid;grid-template-columns:400px 1fr;
+  gap:clamp(36px,5.5vw,76px);
+  align-items:start;
+}
+.photo-wrap{position:relative}
+.photo-wrap .ph-frame{
+  position:relative;overflow:hidden;
+  border:1px solid var(--line);
+}
+.photo-wrap img{width:100%;height:auto;filter:grayscale(18%) contrast(1.02)}
+.photo-wrap .ph-cap{
+  margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;
+  font-size:11.5px;letter-spacing:.14em;color:var(--steel);text-transform:uppercase;
+}
+.photo-wrap .ph-cap b{font-family:var(--serif);font-weight:600;font-size:14px;color:var(--ink);letter-spacing:.06em;text-transform:none}
+.photo-wrap .ph-edge{
+  position:absolute;inset:12px;border:1px solid var(--line-2);pointer-events:none;
+}
+.founder-head h3{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:.1em;
+}
+.founder-head .role{
+  margin-top:8px;font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--steel);
+}
+.founder-head .role .seal-dot{
+  display:inline-block;width:8px;height:8px;background:var(--seal);margin-right:10px;
+}
+.pull{
+  margin-top:clamp(26px,4vw,38px);
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(16.5px,2.1vw,21px);line-height:2.05;letter-spacing:.02em;
+  border-left:3px solid var(--seal);padding-left:22px;
+  color:var(--ink);
+}
+.career{margin-top:clamp(28px,4vw,40px);border-left:1px solid var(--line-2);padding-left:26px}
+.career .c-row{position:relative;padding:0 0 22px 14px}
+.career .c-row:last-child{padding-bottom:0}
+.career .c-row::before{
+  content:"";position:absolute;left:-31px;top:9px;width:9px;height:9px;
+  background:var(--paper);border:1.5px solid var(--seal);transform:rotate(45deg);
+}
+.career .c-co{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--seal-deep)}
+.career .c-role{font-family:var(--serif);font-weight:600;font-size:15px;margin-top:2px;line-height:1.6}
+.twin{margin-top:clamp(30px,4.5vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.twin .tw{background:var(--card);padding:clamp(20px,3vw,30px)}
+.twin h4{
+  font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.06em;
+  display:flex;align-items:center;gap:10px;
+}
+.twin h4::before{content:"";width:8px;height:8px;background:var(--seal);flex:none}
+.twin p{margin-top:10px;font-size:13.5px;color:var(--ink-2);line-height:1.85}
+.found-bio{margin-top:28px;font-size:14px;color:var(--ink-2);max-width:62ch;line-height:2}
+
+/* ---------- company ---------- */
+.statement-lg{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(1.5rem,3vw,2.35rem);line-height:1.85;letter-spacing:.02em;
+  max-width:22em;
+}
+.statement-lg .red{color:var(--seal)}
+.facts{
+  margin-top:clamp(44px,6vw,66px);
+  border-top:1px solid var(--line-2);
+}
+.fact{
+  display:grid;grid-template-columns:170px 1fr 1.2fr;
+  gap:clamp(12px,2vw,28px);
+  padding:20px 2px;border-bottom:1px solid var(--line);
+  align-items:start;
+}
+.fact dt{
+  font-size:11.5px;font-weight:700;letter-spacing:.2em;color:var(--steel);
+  text-transform:uppercase;padding-top:4px;
+}
+.fact dd{font-size:15px;line-height:1.8}
+.fact dd a{border-bottom:1px solid var(--line-2);transition:border-color .25s ease}
+.fact dd a:hover{border-color:var(--seal);color:var(--seal-deep)}
+
+/* ---------- contact ---------- */
+.contact{padding-block:clamp(90px,12vw,150px)}
+.contact .in{max-width:760px;margin-inline:auto;text-align:center;position:relative}
+.contact .in .cn-seal{
+  width:34px;height:34px;border:1.5px solid var(--seal-bright);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 30px;transform:rotate(45deg);
+}
+.contact .in .cn-seal i{transform:rotate(-45deg);width:8px;height:8px;background:var(--seal-bright)}
+.contact h2{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.8;
+  letter-spacing:.02em;color:var(--navy-txt);
+}
+.contact .c-sub{
+  margin:26px auto 0;max-width:54ch;
+  font-size:14px;color:var(--navy-sub);line-height:2;
+}
+.contact .c-cta{display:flex;gap:16px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.contact h2 .l-a,.contact h2 .l-b{display:inline}
+.contact h2 .l-c{display:block}
+.contact h2 .l-d{display:inline}
+.ccard{display:flex;flex-direction:column;align-items:center;gap:7px;padding:20px 32px;min-width:280px;text-align:center;text-decoration:none;cursor:pointer;transition:.25s ease}
+.ccard .cc-lbl{font-size:15px;font-weight:500;letter-spacing:.06em}
+.ccard .cc-sub{font-size:13px;letter-spacing:.03em;font-family:var(--sans);font-weight:400;opacity:.92;margin-top:1px}
+.ccard-mail{background:var(--paper);color:var(--navy);border:1px solid var(--paper)}
+.ccard-mail:hover{background:var(--seal-bright);border-color:var(--seal-bright);color:var(--navy)}
+.ccard-mail .cc-sub{color:var(--ink-2);opacity:1}
+.ccard-tel{background:transparent;color:var(--navy-txt);border:1px solid rgba(240,237,228,.42)}
+.ccard-tel:hover{border-color:var(--navy-txt);background:rgba(240,237,228,.06)}
+.ccard-tel .cc-sub{color:inherit;opacity:.85}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--navy-line)}
+.f-in{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:32px;
+  padding-block:48px 40px;
+}
+.f-brand{display:flex;flex-direction:column;gap:14px}
+.f-brand .fb{display:flex;align-items:center;gap:13px}
+.f-brand img{height:34px;width:auto;filter:brightness(0) invert(1)}
+.f-brand .fbn{font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:.06em}
+.f-brand .fben{font-size:9.5px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--navy-sub)}
+.f-brand p{font-size:12px;color:var(--navy-sub);line-height:1.9}
+.f-nav{display:flex;gap:44px}
+.f-nav ul li a{
+  font-size:12px;color:var(--navy-sub);line-height:2.3;letter-spacing:.05em;
+  transition:color .25s ease;
+}
+.f-nav ul li a:hover{color:var(--navy-txt)}
+.f-nav h5{
+  font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--navy-sub);margin-bottom:10px;
+}
+.f-btm{
+  border-top:1px solid var(--navy-line);
+  padding:20px 0 26px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.f-btm small{font-size:11px;color:var(--navy-sub);letter-spacing:.08em}
+
+/* ---------- reveal: deterministic CSS entrance (never hides content) ---------- */
+@media (prefers-reduced-motion: no-preference){
+  .reveal{animation:rise .8s cubic-bezier(.22,.61,.36,1) both}
+}
+@keyframes rise{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+.sp{display:none}
+br.desk{display:inline}
+br.mob{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .founder-grid{grid-template-columns:320px 1fr}
+  .f-nav{gap:24px}
+}
+@media (max-width:900px){
+  .head-nav{display:none}
+  .menu-btn{display:flex}
+  .mobile-nav{display:block}
+  .stats{grid-template-columns:1fr 1fr;gap:0}
+  .stat{border-right:0;padding:20px 16px 0 0}
+  .pain-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr 1fr;row-gap:44px}
+  .proc-grid::before{display:none}
+  .proc .p-no::after{display:none}
+  .case-grid{grid-template-columns:1fr}
+  .founder-grid{grid-template-columns:1fr}
+  .photo-wrap{max-width:380px}
+  .layer{grid-template-columns:1fr;padding-left:24px}
+  .layers::before{left:0}
+  .layer::before{left:-4px}
+  .why-row{grid-template-columns:54px 1fr}
+  .why-row p{grid-column:2}
+  .prop{grid-template-columns:54px 1fr}
+  .prop .pr-body{grid-column:2}
+  .fact{grid-template-columns:150px 1fr}
+  .fact dd:last-child{display:none}
+}
+@media (max-width:1100px){
+  .sp{display:inline}
+}
+@media (max-width:640px){
+  body{font-size:15px}
+  .stats{grid-template-columns:1fr 1fr}
+  .twin{grid-template-columns:1fr}
+  .f-in{flex-direction:column}
+  .f-nav{flex-wrap:wrap;gap:28px;justify-content:space-between}
+  .hero-vert{display:none}
+  .proc-grid{grid-template-columns:1fr}
+  .ai-lever{grid-template-columns:1fr}
+  .brand img{height:40px}
+  br.desk{display:none}
+  br.mob{display:inline}
+  .contact h2 .l-a,.contact h2 .l-b,.contact h2 .l-c,.contact h2 .l-d{display:block}
+  .c-cta .ccard{padding:17px 22px;min-width:0;flex:1 1 210px}
+  .btn{font-size:13.5px;padding:15px 26px}
+  /* mobile type scale */
+  .hero h1{font-size:clamp(2rem,8.2vw,2.25rem);line-height:1.6}
+  .hero-tagline span{font-size:10px;letter-spacing:.16em}
+  .hero-sub{font-size:14.5px}
+  .stat .cap{font-size:12.5px}
+  .lead{font-size:15px;line-height:1.85}
+  .pain p,.svc>p,.twin p,.why-row p,.found-bio{font-size:14.5px}
+  .svc ul li,.case .c-kb,.prop .pr-body,.proc p,.sec-note{font-size:14px}
+  .disc{font-size:11.5px}
+  .case .c-k,.case .c-tag{font-size:11.5px}
+  .f-brand p,.f-nav ul li a{font-size:12.5px}
+  .f-btm small{font-size:11.5px}
+  .contact .c-sub{font-size:14.5px}
+  .blk-sub{display:none}
+}
+
+
+/* ---------- standalone pages ---------- */
+.subhero{padding-block:clamp(64px,8vw,104px) clamp(48px,6vw,76px);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.subhero::after{content:"";position:absolute;right:-110px;top:-150px;width:360px;height:360px;border:1px solid var(--line);transform:rotate(18deg);pointer-events:none}
+.subhero .kicker{font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--seal-deep);margin-bottom:20px}
+.subhero h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.35;letter-spacing:.03em}
+.subhero .subcopy{margin-top:22px;max-width:64ch;color:var(--ink-2);font-size:15.5px;line-height:2}
+.breadcrumb{display:flex;gap:10px;align-items:center;font-size:11.5px;color:var(--steel);margin-bottom:28px}
+.breadcrumb a{border-bottom:1px solid var(--line-2)}
+.page-section{padding-block:clamp(62px,8vw,100px)}
+.page-section + .page-section{border-top:1px solid var(--line)}
+.page-intro{display:grid;grid-template-columns:minmax(220px,.7fr) 1.3fr;gap:clamp(32px,6vw,82px);align-items:start}
+.page-intro .bigline{font-family:var(--serif);font-weight:700;font-size:clamp(1.45rem,2.9vw,2.25rem);line-height:1.85}
+.page-intro .bodycopy{font-size:15px;color:var(--ink-2);line-height:2.05}
+.page-intro .bodycopy p+p{margin-top:18px}
+.profile-facts{margin-top:0;border-top:1px solid var(--line-2)}
+.profile-row{display:grid;grid-template-columns:190px 1fr;gap:28px;padding:22px 2px;border-bottom:1px solid var(--line);align-items:start}
+.profile-row dt{font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--steel);text-transform:uppercase;padding-top:4px}
+.profile-row dd{font-size:15px;line-height:1.9}
+.profile-row a{border-bottom:1px solid var(--line-2)}
+.business-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.business-card{background:var(--card);padding:clamp(24px,3vw,36px)}
+.business-card .no{font-family:var(--numen);font-style:italic;color:var(--seal);font-size:16px}
+.business-card h3{font-size:18px;margin-top:8px}
+.business-card p{font-size:13.5px;color:var(--steel);margin-top:10px;line-height:1.9}
+.policy-wrap{max-width:880px}
+.policy-lead{font-size:15px;color:var(--ink-2);line-height:2.05;margin-bottom:38px}
+.policy-item{padding:28px 0;border-top:1px solid var(--line)}
+.policy-item:first-of-type{border-top:1px solid var(--line-2)}
+.policy-item h2{font-size:clamp(18px,2.2vw,22px);margin-bottom:14px}
+.policy-item p,.policy-item li{font-size:14.5px;color:var(--ink-2);line-height:2}
+.policy-item ol,.policy-item ul{list-style:decimal;padding-left:1.5em}
+.policy-item ul{list-style:disc}
+.policy-item li+li{margin-top:7px}
+.policy-meta{margin-top:34px;padding-top:22px;border-top:1px solid var(--line-2);font-size:13px;color:var(--steel);line-height:1.9}
+.page-contact-band{padding-block:56px}
+.page-contact-band .inner{display:flex;justify-content:space-between;gap:28px;align-items:center}
+.page-contact-band h2{font-size:clamp(20px,2.8vw,28px)}
+.page-contact-band p{font-size:13.5px;color:var(--navy-sub);margin-top:8px}
+@media(max-width:760px){.page-intro{grid-template-columns:1fr}.profile-row{grid-template-columns:1fr;gap:7px}.business-grid{grid-template-columns:1fr}.page-contact-band .inner{align-items:flex-start;flex-direction:column}.subhero::after{right:-220px}}
+</style></head><body id="top"><header class="site-head">
+  <div class="container head-in">
+    <a class="brand" href="/" aria-label="MIトラスト合同会社 ホーム">
+      <img src="data:image/png;base64,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" onerror="this.onerror=null;this.src='https://mi-trust.net/logo.png'" alt="MIトラスト">
+      <span class="bn"><span class="bn-jp">MIトラスト</span><span class="bn-en">Business Transformation Partner</span></span>
+    </a>
+    <nav class="head-nav" aria-label="メインナビゲーション">
+      <a class="nv" href="/#solve">課題</a>
+      <a class="nv" href="/#approach">アプローチ</a>
+      <a class="nv" href="/#services">支援領域</a>
+      <a class="nv" href="/#cases">実績</a>
+      <a class="nv" href="/#founder">代表</a>
+      <a class="nv" href="/about">会社概要</a>
+      <a class="cta" href="/#contact">まず相談する</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー">
+  <a href="/#solve">課題を構造化する</a><a href="/#approach">3層アプローチ</a><a href="/#services">4つの支援領域</a><a href="/#process">進め方</a><a href="/#cases">支援実績・検討テーマ</a><a href="/#founder">代表プロフィール</a><a href="/about">会社概要</a>
+  <div class="m-sub"><a class="m-cta" href="/#contact">まず相談する</a></div>
+</div><main>
+<section class="subhero"><div class="container"><div class="breadcrumb"><a href="/">HOME</a><span>／</span><span>会社概要</span></div><p class="kicker">Company</p><h1>会社概要</h1><p class="subcopy">経営・事業・営業・人材・AIを横断し、課題の構造化から変革設計、実装・定着まで。MIトラストは、経営と現場のあいだにある「実行の壁」を越えるための変革支援を行います。</p></div></section>
+<section class="page-section"><div class="container page-intro"><div><div class="eyebrow"><span class="seal"></span><span class="tag">About MI Trust</span><span class="hair"></span></div><p class="bigline">経営課題を、<br><span class="red">変革テーマに。</span><br>変革テーマを、<br>現場の実行へ。</p></div><div class="bodycopy"><p>戦略や構想をつくるだけでは、企業は変わりません。MIトラストは、経営層との議論で課題を構造化し、管理職・現場が実際に動けるテーマ、役割、行動へと落とし込みます。</p><p>経営・事業変革、営業・アカウント変革、変革人材育成、AI活用・業務変革を個別の施策として切り離さず、企業変革を一つの設計として支援します。</p></div></div></section>
+<section class="page-section" style="background:var(--paper-2)"><div class="container"><div class="eyebrow"><span class="seal"></span><span class="tag">Company Profile</span><span class="hair"></span></div><h2 class="sec-title">会社情報</h2><dl class="profile-facts" style="margin-top:42px"><div class="profile-row"><dt>会社名</dt><dd>MIトラスト合同会社</dd></div><div class="profile-row"><dt>設立</dt><dd>2024年6月</dd></div><div class="profile-row"><dt>代表者</dt><dd>石川 真琴</dd></div><div class="profile-row"><dt>所在地</dt><dd>東京都中央区</dd></div><div class="profile-row"><dt>事業内容</dt><dd>企業変革支援<br>経営・事業変革 / 営業・アカウント変革 / 変革人材育成 / AI活用・業務変革</dd></div><div class="profile-row"><dt>連絡先</dt><dd><a href="mailto:makoto.ishikawa@mi-trust.net">makoto.ishikawa@mi-trust.net</a><br><a href="tel:08065513429">080-6551-3429</a></dd></div><div class="profile-row"><dt>Web</dt><dd><a href="https://www.mi-trust.net/">www.mi-trust.net</a></dd></div></dl></div></section>
+<section class="page-section"><div class="container"><div class="eyebrow"><span class="seal"></span><span class="tag">Business Areas</span><span class="hair"></span></div><h2 class="sec-title">4つの支援領域</h2><div class="business-grid"><article class="business-card"><span class="no">01</span><h3>経営・事業変革</h3><p>経営課題の構造化から、変革テーマの設定、実行設計までを支援します。</p></article><article class="business-card"><span class="no">02</span><h3>営業・アカウント変革</h3><p>顧客課題起点の営業への転換と、アカウント戦略・実行力の高度化を支援します。</p></article><article class="business-card"><span class="no">03</span><h3>変革人材育成</h3><p>経営視点と現場実行をつなぐ管理職・リーダーの育成を、実践型で支援します。</p></article><article class="business-card"><span class="no">04</span><h3>AI活用・業務変革</h3><p>AIを単体導入で終わらせず、事業・業務・人材の変革テーマとして実装します。</p></article></div></div></section>
+<section class="navy page-contact-band"><div class="container inner"><div><h2>変革テーマが固まる前から、ご相談いただけます</h2><p>課題の整理・仮説設定の段階から伴走します。</p></div><a class="btn btn-solid" href="/#contact">お問い合わせ <span class="arr">→</span></a></div></section>
+</main><footer class="footer navy">
+  <div class="container"><div class="f-in">
+    <div class="f-brand"><span class="fb"><img src="data:image/png;base64,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" onerror="this.onerror=null;this.src='https://mi-trust.net/logo.png'" alt="MIトラスト"><span class="fbn">MIトラスト合同会社</span></span><span class="fben">Business Transformation Partner</span><p>経営課題を、変革テーマに。<br>変革テーマを、現場の実行へ。</p></div>
+    <nav class="f-nav" aria-label="フッターナビゲーション">
+      <div><h5>About</h5><ul><li><a href="/#solve">課題を構造化する</a></li><li><a href="/#approach">3層アプローチ</a></li><li><a href="/#services">4つの支援領域</a></li><li><a href="/#process">進め方</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="/#cases">支援実績・検討テーマ</a></li><li><a href="/#founder">代表プロフィール</a></li><li><a href="/about">会社概要</a></li><li><a href="/#contact">お問い合わせ</a></li><li><a href="/privacy">プライバシーポリシー</a></li></ul></div>
+    </nav>
+  </div></div>
+  <div class="container"><div class="f-btm"><small>© 2026 MIトラスト合同会社 All Rights Reserved.</small></div></div>
+</footer><script>(function(){var head=document.querySelector('.site-head');var onScroll=function(){head.classList.toggle('scrolled',window.scrollY>8);};window.addEventListener('scroll',onScroll,{passive:true});onScroll();var btn=document.getElementById('menuBtn'),nav=document.getElementById('mobileNav');var toggle=function(open){btn.classList.toggle('open',open);nav.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':'';};btn.addEventListener('click',function(){toggle(!nav.classList.contains('open'));});nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggle(false);});});})();</script></body></html>
